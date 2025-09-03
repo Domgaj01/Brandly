@@ -29,4 +29,8 @@ wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, fals
           'show_in_rest' => true,
         ]);
       });
+    //   function plp_register_strings(){
+    //     pll_register_string("PolylangP", "");
+    // }
+    // add_action("init", "plp_register_strings");
     ?>

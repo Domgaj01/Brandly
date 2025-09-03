@@ -35,9 +35,10 @@
 // WP Query – zober všetky posts (uprav si posts_per_page podľa seba)
 $paged = max( 1, get_query_var('paged') );
 $q = new WP_Query([
-  'post_type'      => 'post',
+  'post_type' => 'post',
   'posts_per_page' => 6,
-  'paged'          => $paged,
+  'paged' => $paged,
+  'lang' => pll_current_language(),
 ]);
 
 if ( $q->have_posts() ) :
@@ -110,7 +111,7 @@ if ( $q->have_posts() ) :
     </div>
   </section>
 <?php
-  endwhile;
+  endwhile; 
 
   // Pagination (ak chceš)
   echo '<div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-6">';

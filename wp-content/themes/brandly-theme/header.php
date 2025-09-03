@@ -29,9 +29,19 @@
     <li><a href="<?php echo home_url('/'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Home</a></li>
     <li><a href="#" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
     <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
-    <li><a href="<?php echo home_url('/about-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">About Us</a></li>
+    <li><a href="<?php echo home_url('/about-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
   </ul>
 </nav>
+<!-- Language Selector (Navbar) -->
+<div class="relative xl:col-start-10 xl:col-end-11 font-[Poppins]">
+  <?php pll_the_languages([
+      'dropdown'   => 1,       // output as dropdown
+      'show_flags' => 1,       // show flags
+      'show_names' => 0,       // only flags
+      'hide_if_empty' => 0      // show even if no translation
+  ]); ?>
+</div>
+
 
       <!-- Cart -->
       <div class="flex items-center gap-4 xl:col-start-11 xl:col-end-12">
@@ -50,7 +60,7 @@
         <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Home</a></li>
         <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
         <li><a href="<?php echo home_url('/blogs'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
-        <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">About Us</a></li>
+        <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
       </ul>
     </nav>
   </header>

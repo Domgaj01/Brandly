@@ -52,7 +52,7 @@
         <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">HOME</a></li>
         <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BUNDLES</a></li>
         <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BLOGS</a></li>
-        <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">ABOUT US</a></li>
+        <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
       </ul>
     </nav>
 
