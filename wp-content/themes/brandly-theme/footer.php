@@ -51,13 +51,13 @@
       <ul class="space-y-5 tracking-wide text-black">
         <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">HOME</a></li>
         <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BUNDLES</a></li>
-        <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BLOGS</a></li>
-        <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
+        <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BLOGS</a></li>
+        <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
       </ul>
     </nav>
 
     <!-- divider -->
-    <div class="col-span-1 md:col-span-3 xl:col-span-12 border-t border-[#353535] mt-10 pt-4"></div>
+    <div class="col-span-1 md:col-span-3 xl:col-span-12 border-t border-[#353535]"></div>
 
     <!-- bottom row -->
     <div class="text-black text-sm md:col-span-1 xl:col-start-2 xl:col-end-6">@ <?php echo date('Y'); ?></div>

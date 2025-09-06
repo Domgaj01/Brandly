@@ -1,0 +1,119 @@
+<?php
+get_header();
+
+// Reuse page ID everywhere
+$post_id = get_queried_object_id();
+
+/* ========= ACF (hero) ========= */
+$heading = get_field('help-us_heading');
+if (!$heading) { $heading = get_field('help_us_heading'); } // fallback if used underscore
+$text     = get_field('help_us_text');
+$image    = get_field('help_us_image');
+$cta_txt  = get_field('help_us_cta_text');
+$cta_url  = get_field('help_us_cta_url');
+$formHeading = get_field('form_title');
+
+// Build image URL (accepts array | id | url)
+$img_url = '';
+if ($image) { $img_url = is_array($image) ? ($image['url'] ?? '') : $image; }
+if (!$img_url) { $img_url = get_template_directory_uri() . '/images/help-us.jpg'; }
+?>
+
+<section class="bg-[#D9D9D9]">
+  <div class="mx-auto w-full max-w-[1440px]
+              px-4 sm:px-6 py-10 lg:py-14 xl:py-16
+              gap-y-8 lg:grid lg:grid-cols-12 lg:gap-x-[45px] items-center">
+
+    <!-- Left: Text -->
+    <div class="lg:col-start-2 lg:col-end-7 xl:col-start-2 xl:col-end-7 order-2 lg:order-1">
+      <?php if (!empty($heading)) : ?>
+        <h1 class="uppercase font-['Poppins'] font-semibold
+                   text-[28px] sm:text-[32px] xl:text-[36px]
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6">
+          <?php echo esc_html($heading); ?>
+        </h1>
+      <?php endif; ?>
+
+      <?php if (!empty($text)) : ?>
+        <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
+                    leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
+          <?php echo wp_kses_post( wpautop($text) ); ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($cta_txt) && !empty($cta_url)) : ?>
+        <div class="mt-6 sm:mt-8">
+          <a href="<?php echo esc_url($cta_url); ?>"
+             class="inline-flex w-full sm:w-auto items-center justify-center
+                    bg-black text-white
+                    px-6 py-4 font-['Poppins'] text-[14px] sm:text-[16px] tracking-[0.05em]
+                    hover:shadow-[0_6px_0_rgba(0,0,0,0.2)]
+                    transition-transform hover:-translate-y-[2px]">
+            <?php echo esc_html($cta_txt); ?>
+          </a>
+        </div>
+      <?php endif; ?>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="lg:col-start-7 lg:col-end-12 xl:col-start-7 xl:col-end-12 order-1 lg:order-2 mb-6 lg:mb-0">
+      <div class="relative h-[220px] sm:h-[320px] mt-[45px] md:h-[380px] lg:h-[440px] xl:h-[520px] overflow-hidden">
+        <img src="<?php echo esc_url($img_url); ?>"
+             alt="<?php echo esc_attr( $heading ? wp_strip_all_tags($heading) : 'Help Us image' ); ?>"
+             class="absolute inset-0 w-full h-full object-cover" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11">
+        <?php echo esc_html($formHeading); ?>
+    </h1>
+
+    <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST" class="space-y-6">
+        <input type="hidden" name="action" value="sample_form">
+
+        <div class="space-y-8 sm:space-y-10 font-['Poppins'] font-semibold text-[16px] sm:text-[18px] md:text-[20px] tracking-[0.05em]">
+            <?php 
+            $questions = [
+                "How well do our services meet your expectations?",
+                "How effective have our marketing strategies been for your business?",
+                "How well do our branding strategies reflect your company’s vision?",
+                "How would you rate our responsiveness and communication?",
+                "How well do we understand your business goals and challenges?",
+                "How satisfied are you with the professionalism of our team?",
+                "How satisfied are you with the results so far?",
+            ];
+
+            $options = ["Very Poor", "Poor", "Average", "Good", "Excellent"];
+
+            foreach ($questions as $index => $question): ?>
+                <div>
+                    <p class="mb-2"><?php echo $question; ?></p>
+                    <div class="flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-8 md:gap-12">
+                        <?php foreach ($options as $option): ?>
+                            <label class="flex items-center gap-2 w-1/2 sm:w-auto">
+                                <input type="radio" name="answers[<?php echo $index; ?>]" value="<?php echo $option; ?>" class="bg-[#8075F7]">
+                                <span class="font-['Poppins'] text-[11px] sm:text-[12px] md:text-[14px] font-semibold tracking-[0.05em]"><?php echo $option; ?></span>
+                            </label>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="text-center pt-8 sm:pt-[45px]">
+            <button type="submit" class="bg-[#8075F7] text-white px-4 sm:px-6 py-2 sm:py-3 font-semibold font-['Poppins'] text-[16px] sm:text-[18px] tracking-[0.05em]">
+                <?php the_field('form_submit'); ?>
+            </button>
+        </div>
+    </form>
+</div>
+</section>
+
+
+
+<?php get_footer(); ?>

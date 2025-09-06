@@ -29,7 +29,7 @@
     <li><a href="<?php echo home_url('/'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Home</a></li>
     <li><a href="#" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
     <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
-    <li><a href="<?php echo home_url('/about-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
+    <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
   </ul>
 </nav>
 <!-- Language Selector (Navbar) -->
@@ -60,7 +60,7 @@
         <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Home</a></li>
         <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
         <li><a href="<?php echo home_url('/blogs'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
-        <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
+        <li><a href="<?php echo home_url('/help-us'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
       </ul>
     </nav>
   </header>
