@@ -38,10 +38,10 @@
       <!-- Content -->
       <div class="prose max-w-none font-['Poppins'] text-black leading-relaxed space-y-6 sm:space-y-8">
         <?php the_content(); ?>
+        
       </div>
-
+      <?php comments_template(); ?>
     </div> <!-- end xl:col-start-3 xl:col-span-8 -->
-
   <?php endwhile; endif; ?>
 
 </main>

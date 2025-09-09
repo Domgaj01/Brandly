@@ -16,13 +16,14 @@
 
       <!-- Logo -->
       <div class="flex items-center xl:col-start-2 xl:col-end-4">
-        <img
-          src="<?php echo get_template_directory_uri(); ?>/images/Logo-Brandly.png"
-          alt="Brandly Logo"
-          class="h-[40px] sm:h-[46px] xl:h-[51px] w-auto object-contain"
-        />
-      </div>
-
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Go to homepage" class="inline-flex rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500">
+    <img
+      src="<?php echo get_template_directory_uri(); ?>/images/Logo-Brandly.png"
+      alt="Brandly Logo"
+      class="h-[40px] sm:h-[46px] xl:h-[51px] w-auto object-contain"
+    />
+  </a>
+</div>
       <!-- Nav (desktop only) -->
       <nav class="hidden xl:block xl:col-start-5 xl:col-end-10" aria-label="Primary">
   <ul class="flex justify-center items-center space-x-[45px] text-gray-800">
@@ -36,9 +37,9 @@
 <div class="relative xl:col-start-10 xl:col-end-11 font-[Poppins]">
   <?php pll_the_languages([
       'dropdown'   => 1,       // output as dropdown
-      'show_flags' => 1,       // show flags
-      'show_names' => 0,       // only flags
-      'hide_if_empty' => 0      // show even if no translation
+      'show_flags' => 1,       
+      'show_names' => 0,      
+      'hide_if_empty' => 0      
   ]); ?>
 </div>
 
@@ -57,7 +58,7 @@
     <!-- Mobile Nav -->
     <nav id="mobileNav" class="xl:hidden hidden border-t border-gray-200 bg-white">
       <ul class="flex flex-col gap-2 px-4 sm:px-6 py-4 text-gray-800">
-        <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Home</a></li>
+        <li><a href="<?php echo home_url('/'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Home</a></li>
         <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
         <li><a href="<?php echo home_url('/blogs'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
         <li><a href="<?php echo home_url('/help-us'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>

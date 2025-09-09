@@ -3,12 +3,11 @@
 <section class="bg-white relative">
   <div class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] items-center px-4 sm:px-6 py-8 xl:py-12 relative">
 
-    <!-- Mobile/Tablet Title (black, above image) -->
+    
 <h1 class="block xl:hidden text-[32px] sm:text-[48px] font-semibold tracking-[0.05em] font-['Poppins'] text-black mb-6">
   Blogs
 </h1>
 
-<!-- Image block (background) – iba desktop -->
 <div class="hidden xl:block xl:col-start-4 xl:col-end-12 relative h-[320px] sm:h-[420px] xl:h-[520px] overflow-hidden">
   <img
     src="<?php echo get_template_directory_uri(); ?>/images/blogs-hero.jpg"
@@ -18,7 +17,6 @@
   <div class="absolute inset-0 bg-black/30"></div>
 </div>
 
-    <!-- Desktop Title (overlay with gradient O) -->
     <h1 class="hidden xl:flex xl:col-start-3 xl:col-end-4 absolute top-1/2 -translate-y-1/2
                text-[44px] sm:text-[64px] xl:text-[80px]
                leading-none font-semibold tracking-[0.11em] font-['Poppins']
@@ -32,7 +30,6 @@
 </section>
 
 <?php
-// WP Query – zober všetky posts (uprav si posts_per_page podľa seba)
 $paged = max( 1, get_query_var('paged') );
 $q = new WP_Query([
   'post_type' => 'post',
@@ -44,8 +41,6 @@ $q = new WP_Query([
 if ( $q->have_posts() ) :
   while ( $q->have_posts() ) : $q->the_post();
 
-  // Excerpt: ak je vyplnený manuálne, použijeme ho,
-  // inak zoberieme prvých 32 slov z obsahu:
   $excerpt = get_the_excerpt();
   if ( ! $excerpt ) {
     $excerpt = wp_trim_words(
@@ -97,12 +92,12 @@ if ( $q->have_posts() ) :
           </a>
         </h2>
 
-        <!-- Excerpt (auto 32 slov, ak nie je ručný) -->
+        
         <p class="text-[16px] leading-7 text-black/80 font-['Poppins'] tracking-[0.05em] mb-5">
           <?php echo esc_html( $excerpt ); ?>
         </p>
 
-        <!-- Author + Date -->
+        
         <div class="flex flex-wrap items-center gap-6 font-['Poppins'] text-[12px] tracking-[0.05em]">
           <span class="uppercase font-semibold text-[#8075F7]"><?php the_author(); ?></span>
           <span class="uppercase font-light text-black"><?php echo esc_html( get_the_date('F j, Y') ); ?></span>
@@ -112,16 +107,6 @@ if ( $q->have_posts() ) :
   </section>
 <?php
   endwhile; 
-
-  // Pagination (ak chceš)
-  echo '<div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-6">';
-  the_posts_pagination([
-    'mid_size'  => 2,
-    'prev_text' => __('« Prev'),
-    'next_text' => __('Next »'),
-  ]);
-  echo '</div>';
-
   wp_reset_postdata();
 endif;
 ?>

@@ -9,20 +9,16 @@
     </h1>
 
    
-    <div class="xl:hidden relative w-full aspect-video overflow-hidden rounded-[0px]">
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="metadata"
-      >
-        <source src="<?php echo get_template_directory_uri(); ?>/videos/video-hero1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
+    <div class="xl:hidden relative w-full aspect-video overflow-hidden">
+  <img
+    src="<?php echo get_template_directory_uri(); ?>/images/blogs-hero.jpg"
+    alt="Brandly hero"
+    class="absolute inset-0 w-full h-full object-cover"
+    width="1920" height="1080"
+    fetchpriority="high"
+    decoding="async" />
+  <div class="absolute inset-0 bg-black/40"></div>
+</div>
 
 
     <div class="hidden xl:block xl:col-start-4 xl:col-end-12 relative h-[320px] sm:h-[420px] xl:h-[520px] overflow-hidden">

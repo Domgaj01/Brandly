@@ -1,10 +1,9 @@
 <?php
 get_header();
 
-// Reuse page ID everywhere
 $post_id = get_queried_object_id();
 
-/* ========= ACF (hero) ========= */
+// Fetch ACF fields
 $heading = get_field('help-us_heading');
 if (!$heading) { $heading = get_field('help_us_heading'); } // fallback if used underscore
 $text     = get_field('help_us_text');
@@ -13,7 +12,7 @@ $cta_txt  = get_field('help_us_cta_text');
 $cta_url  = get_field('help_us_cta_url');
 $formHeading = get_field('form_title');
 
-// Build image URL (accepts array | id | url)
+
 $img_url = '';
 if ($image) { $img_url = is_array($image) ? ($image['url'] ?? '') : $image; }
 if (!$img_url) { $img_url = get_template_directory_uri() . '/images/help-us.jpg'; }

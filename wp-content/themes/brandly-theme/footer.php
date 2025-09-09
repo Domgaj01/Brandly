@@ -1,13 +1,15 @@
 <footer class="bg-white">
   <div class="mx-auto w-full max-w-[1440px] grid grid-cols-1 gap-y-10 md:grid-cols-3 md:gap-x-12 xl:grid-cols-12 xl:gap-x-[45px] py-12 px-4 sm:px-6">
 
-    <!-- logo + about -->
+    
     <div class="md:col-span-1 xl:col-start-2 xl:col-end-5">
-      <img
-        src="<?php echo get_template_directory_uri(); ?>/images/Logo-Brandly.png"
-        alt="Brandly"
-        class="h-[40px] sm:h-[46px] xl:h-[51px] w-auto object-contain mb-6"
-      />
+    <a href="<?php echo esc_url( home_url( '/help-us' ) ); ?>" aria-label="Go to homepage" class="inline-flex rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500">
+    <img
+      src="<?php echo get_template_directory_uri(); ?>/images/Logo-Brandly.png"
+      alt="Brandly Logo"
+      class="h-[40px] sm:h-[46px] xl:h-[51px] w-auto object-contain"
+    />
+  </a>
 
       <div class="space-y-3 text-[14px] leading-7 text-black tracking-[0.05em] font-['Poppins'] max-w-md">
         <p>
@@ -15,7 +17,7 @@
         </p>
       </div>
 
-      <!-- socials -->
+      
       <div class="mt-6 flex items-center space-x-4">
         <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-full">
           <span class="iconify text-[30px]" data-icon="mdi:instagram"></span>
@@ -26,7 +28,7 @@
       </div>
     </div>
 
-    <!-- contact -->
+    
     <div class="md:col-span-1 xl:col-start-6 xl:col-end-10">
       <h3 class="text-[20px] sm:text-[24px] text-black mb-6 tracking-[0.05em] font-['Poppins'] font-semibold">Contact Information</h3>
       <ul class="space-y-5 text-black">
@@ -45,11 +47,11 @@
       </ul>
     </div>
 
-    <!-- nav -->
+    
     <nav class="md:col-span-1 xl:col-start-10 xl:col-end-12">
       <h3 class="text-[20px] sm:text-[24px] text-black mb-6 tracking-[0.05em] font-['Poppins'] font-semibold">Navigation</h3>
       <ul class="space-y-5 tracking-wide text-black">
-        <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">HOME</a></li>
+        <li><a href="<?php echo home_url('/'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">HOME</a></li>
         <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BUNDLES</a></li>
         <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BLOGS</a></li>
         <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>

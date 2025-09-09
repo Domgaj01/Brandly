@@ -1,8 +1,6 @@
 <?php function 
 ic_load_resources(){ 
-wp_enqueue_script("poppins-font" , "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); 
-wp_enqueue_script("montserrat-font" , "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); wp_enqueue_style('site-style', get_template_directory_uri(). '/style.css'); 
-wp_enqueue_script('site-script', get_template_directory_uri(). '/script.js'); 
+wp_enqueue_style("style", "style.css");
 wp_enqueue_style('tailwind', get_template_directory_uri() . '/src/output.css'); 
 wp_enqueue_script('iconify','https://code.iconify.design/3/3.1.0/iconify.min.js'); 
 wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, false);
@@ -34,14 +32,14 @@ wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, fals
         // Fetch the values
         $options = $_REQUEST["answers"];
     
-        // Uloženie do vlastného post type (napr. feedback)
+        // Save to a custom post type
         $feedbackPost = wp_insert_post(array(
             "post_type"   => "feedback",
             "post_status" => "publish",
             "post_title"  => "Customer Feedback"
         ));
     
-        // Uložíme celé pole odpovedí ako meta
+        
         if ($feedbackPost && !is_wp_error($feedbackPost)) {
             update_field("options", $options, $feedbackPost);
         }
@@ -122,4 +120,4 @@ function feedback_render_meta_box($post) {
   echo '</tbody></table>';
 }
 
-    ?>
+  ?>
