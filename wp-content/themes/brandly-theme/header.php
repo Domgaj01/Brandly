@@ -10,7 +10,7 @@
 <body <?php body_class('bg-white'); ?>>
 
   <!-- Sticky Navbar -->
-  <header class="sticky top-0 inset-x-0 z-50 bg-white backdrop-blur">
+  <header class="sticky top-0 inset-x-0 z-50 h-[72px] bg-white backdrop-blur">
     <div class="mx-auto w-full max-w-[1440px] xl:h-[120px] xl:grid xl:grid-cols-12 xl:gap-x-[45px] items-center
                 px-4 sm:px-6 py-3 xl:py-0 flex justify-between">
 
@@ -20,7 +20,7 @@
     <img
       src="<?php echo get_template_directory_uri(); ?>/images/Logo-Brandly.png"
       alt="Brandly Logo"
-      class="h-[40px] sm:h-[46px] xl:h-[51px] w-auto object-contain"
+      class="h-[40px] sm:h-[46px] xl:h-[51px] w-[204px] object-contain"
     />
   </a>
 </div>
@@ -28,7 +28,7 @@
       <nav class="hidden xl:block xl:col-start-5 xl:col-end-10" aria-label="Primary">
   <ul class="flex justify-center items-center space-x-[45px] text-gray-800">
     <li><a href="<?php echo home_url('/'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Home</a></li>
-    <li><a href="#" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
+    <li><a href="<?php echo home_url('/goals'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Goals</a></li>
     <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
     <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
   </ul>
@@ -59,7 +59,7 @@
     <nav id="mobileNav" class="xl:hidden hidden border-t border-gray-200 bg-white">
       <ul class="flex flex-col gap-2 px-4 sm:px-6 py-4 text-gray-800">
         <li><a href="<?php echo home_url('/'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Home</a></li>
-        <li><a href="#" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Bundles</a></li>
+        <li><a href="<?php echo home_url('/goals'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Goals</a></li>
         <li><a href="<?php echo home_url('/blogs'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
         <li><a href="<?php echo home_url('/help-us'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
       </ul>

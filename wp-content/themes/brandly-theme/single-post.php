@@ -41,7 +41,7 @@
         
       </div>
       <?php comments_template(); ?>
-    </div> <!-- end xl:col-start-3 xl:col-span-8 -->
+    </div>
   <?php endwhile; endif; ?>
 
 </main>

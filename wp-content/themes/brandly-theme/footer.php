@@ -7,7 +7,7 @@
     <img
       src="<?php echo get_template_directory_uri(); ?>/images/Logo-Brandly.png"
       alt="Brandly Logo"
-      class="h-[40px] sm:h-[46px] xl:h-[51px] w-auto object-contain"
+      class="h-[40px] sm:h-[46px] xl:h-[51px] w-[204px] object-contain"
     />
   </a>
 
@@ -51,9 +51,9 @@
     <nav class="md:col-span-1 xl:col-start-10 xl:col-end-12">
       <h3 class="text-[20px] sm:text-[24px] text-black mb-6 tracking-[0.05em] font-['Poppins'] font-semibold">Navigation</h3>
       <ul class="space-y-5 tracking-wide text-black">
-        <li><a href="<?php echo home_url('/'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">HOME</a></li>
-        <li><a href="#" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BUNDLES</a></li>
-        <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">BLOGS</a></li>
+        <li><a href="<?php echo home_url('/'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Home </a></li>
+        <li><a href="<?php echo home_url('/goals'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Goals</a></li>
+        <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
         <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
       </ul>
     </nav>
@@ -67,4 +67,6 @@
       Copyright © Brandly. Denmark Esbjerg
     </div>
   </div>
+  <?php wp_footer(); ?>
+</body>
 </footer>

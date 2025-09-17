@@ -1,33 +1,57 @@
 <?php get_header();?>
 
 <section class="bg-white relative">
-  <div class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] items-center px-4 sm:px-6 py-8 xl:py-12 relative">
+  <div id="split-title"
+       class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] items-center px-4 sm:px-6 py-8 xl:py-12 relative">
 
-    
-<h1 class="block xl:hidden text-[32px] sm:text-[48px] font-semibold tracking-[0.05em] font-['Poppins'] text-black mb-6">
-  Blogs
-</h1>
+    <div id="split-title-img"
+         class="xl:block xl:col-start-4 xl:col-end-12 relative h-[320px] sm:h-[420px] xl:h-[520px] overflow-hidden">
+      <img
+        src="<?php echo get_template_directory_uri(); ?>/images/blogs-hero.jpg"
+        alt="Blogs Hero"
+        class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/30"></div>
+    </div>
 
-<div class="hidden xl:block xl:col-start-4 xl:col-end-12 relative h-[320px] sm:h-[420px] xl:h-[520px] overflow-hidden">
-  <img
-    src="<?php echo get_template_directory_uri(); ?>/images/blogs-hero.jpg"
-    alt="Blogs Hero"
-    class="absolute inset-0 w-full h-full object-cover"
-  />
-  <div class="absolute inset-0 bg-black/30"></div>
-</div>
-
-    <h1 class="hidden xl:flex xl:col-start-3 xl:col-end-4 absolute top-1/2 -translate-y-1/2
-               text-[44px] sm:text-[64px] xl:text-[80px]
-               leading-none font-semibold tracking-[0.11em] font-['Poppins']
-               z-20">
-      <span class="text-black">Bl</span>
-      <span class="bg-[linear-gradient(to_right,black_50%,white_50%)] bg-clip-text text-transparent">o</span>
-      <span class="text-white">gs</span>
+    <h1 id="split-title-title"
+        class="split-title hidden xl:flex xl:col-start-3 xl:col-end-4 absolute top-1/2 -translate-y-1/2
+               text-[44px] sm:text-[64px] xl:text-[80px] leading-none font-semibold tracking-[0.13em] font-['Poppins'] z-20">
+      Blogs
     </h1>
-
   </div>
+
+  <h1 class="block xl:hidden px-4 sm:px-6 mt-6 text-[32px] sm:text-[48px] font-semibold tracking-[0.05em] font-['Poppins'] text-black">Blogs</h1>
 </section>
+
+<script>
+(function(){
+  const container = document.getElementById('split-title');
+  const mediaBox  = document.getElementById('split-title-img');
+  const title     = document.getElementById('split-title-title');
+  if (!container || !mediaBox || !title) return;
+
+  function update(){
+    const c = container.getBoundingClientRect();
+    const m = mediaBox.getBoundingClientRect();
+    const r = title.getBoundingClientRect();
+
+    title.style.setProperty('--split', (m.left - c.left) + 'px');
+    title.style.setProperty('--bg-w',  c.width + 'px');
+    title.style.setProperty('--bg-x',  (r.left - c.left) + 'px');
+  }
+
+  // prepočty
+  window.addEventListener('load', update, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  window.addEventListener('orientationchange', update, {passive:true});
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
+
+  const ro = new ResizeObserver(update);
+  ro.observe(container); ro.observe(mediaBox); ro.observe(title);
+
+  update();
+})();
+</script>
 
 <?php
 $paged = max( 1, get_query_var('paged') );
@@ -56,7 +80,7 @@ if ( $q->have_posts() ) :
       <!-- Image -->
       <a href="<?php the_permalink(); ?>" class="block h-[220px] sm:h-[280px] xl:h-[320px] overflow-hidden md:col-span-5 xl:col-start-1"> 
         <?php if ( has_post_thumbnail() ) : ?> <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover hover:scale-[1.02] transition-transform']); 
-        ?> <?php else : ?> <img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.webp" alt="" class="w-full h-full object-cover opacity-80"> 
+        ?> <?php else : ?> <img src="<?php echo get_template_directory_uri(); ?>" alt="<?php echo $image["alt"] ?>" class="w-full h-full object-cover opacity-80"> 
         <?php endif; ?> </a>
 
       <!-- Content -->

@@ -1,7 +1,7 @@
 <?php function 
 ic_load_resources(){ 
-wp_enqueue_style("style", "style.css");
-wp_enqueue_style('tailwind', get_template_directory_uri() . '/src/output.css'); 
+wp_enqueue_style("style",get_template_directory_uri() . "/style.css");
+wp_enqueue_style("script",get_template_directory_uri() . "/script.js", [], null, true);
 wp_enqueue_script('iconify','https://code.iconify.design/3/3.1.0/iconify.min.js'); 
 wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, false);
 
@@ -9,6 +9,13 @@ wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, fals
     add_action('wp_enqueue_scripts', 'ic_load_resources'); 
     add_action('after_setup_theme', function () {
         add_theme_support('post-thumbnails');
+      });
+      add_action('wp_enqueue_scripts', function () {
+        // tvoje hlavné CSS (napr. style.css)
+        wp_enqueue_style('theme-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
+      
+        // buildnutý Tailwind výstup
+        wp_enqueue_style('tw-output', get_template_directory_uri() . '/src/output.css', [], filemtime(get_template_directory() . '/src/output.css'));
       });
 
       add_action('init', function () {
@@ -119,5 +126,13 @@ function feedback_render_meta_box($post) {
   }
   echo '</tbody></table>';
 }
+
+add_action('wp_head', function () {
+  if (!is_front_page()) return;
+  $poster = get_stylesheet_directory_uri() . '/images/hero-poster.jpg'; // uprav ak máš iný názov/cestu
+  echo '<link rel="preload" as="image" href="' . esc_url($poster) . '">';
+}, 1);
+
+
 
   ?>

@@ -1,21 +1,10 @@
-<?php
-get_header();
-
-$post_id = get_queried_object_id();
-
-// Fetch ACF fields
-$heading = get_field('help-us_heading');
-if (!$heading) { $heading = get_field('help_us_heading'); } // fallback if used underscore
-$text     = get_field('help_us_text');
-$image    = get_field('help_us_image');
-$cta_txt  = get_field('help_us_cta_text');
-$cta_url  = get_field('help_us_cta_url');
-$formHeading = get_field('form_title');
-
-
-$img_url = '';
-if ($image) { $img_url = is_array($image) ? ($image['url'] ?? '') : $image; }
-if (!$img_url) { $img_url = get_template_directory_uri() . '/images/help-us.jpg'; }
+<?php get_header();
+$heading     = get_field('help-us_heading');  
+$text        = get_field('help_us_text');    
+$image       = get_field('help_us_image');     
+$cta_txt     = get_field('help_us_cta_text'); 
+$cta_url     = get_field('help_us_cta_url');   
+$formHeading = get_field('form_title');        
 ?>
 
 <section class="bg-[#D9D9D9]">
@@ -25,7 +14,7 @@ if (!$img_url) { $img_url = get_template_directory_uri() . '/images/help-us.jpg'
 
     <!-- Left: Text -->
     <div class="lg:col-start-2 lg:col-end-7 xl:col-start-2 xl:col-end-7 order-2 lg:order-1">
-      <?php if (!empty($heading)) : ?>
+      <?php if ($heading) : ?>
         <h1 class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
                    leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6">
@@ -33,14 +22,14 @@ if (!$img_url) { $img_url = get_template_directory_uri() . '/images/help-us.jpg'
         </h1>
       <?php endif; ?>
 
-      <?php if (!empty($text)) : ?>
+      <?php if ($text) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
           <?php echo wp_kses_post( wpautop($text) ); ?>
         </div>
       <?php endif; ?>
 
-      <?php if (!empty($cta_txt) && !empty($cta_url)) : ?>
+      <?php if ($cta_txt && $cta_url) : ?>
         <div class="mt-6 sm:mt-8">
           <a href="<?php echo esc_url($cta_url); ?>"
              class="inline-flex w-full sm:w-auto items-center justify-center
@@ -57,14 +46,18 @@ if (!$img_url) { $img_url = get_template_directory_uri() . '/images/help-us.jpg'
     <!-- Right: Image -->
     <div class="lg:col-start-7 lg:col-end-12 xl:col-start-7 xl:col-end-12 order-1 lg:order-2 mb-6 lg:mb-0">
       <div class="relative h-[220px] sm:h-[320px] mt-[45px] md:h-[380px] lg:h-[440px] xl:h-[520px] overflow-hidden">
-        <img src="<?php echo esc_url($img_url); ?>"
-             alt="<?php echo esc_attr( $heading ? wp_strip_all_tags($heading) : 'Help Us image' ); ?>"
-             class="absolute inset-0 w-full h-full object-cover" />
+        <?php if (!empty($image)) : ?>
+          <img
+            src="<?php echo esc_url($image['url']); ?>"
+            alt="<?php echo esc_attr($image['alt']); ?>"
+            class="absolute inset-0 w-full h-full object-cover" />
+        <?php endif; ?>
       </div>
     </div>
 
   </div>
 </section>
+
 
 <section>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
