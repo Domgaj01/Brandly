@@ -62,25 +62,32 @@ $formHeading = get_field('form_title');
 <section>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
     <h1 class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11">
-        <?php echo esc_html($formHeading); ?>
-    </h1>
+    <?php echo pll__('Help Us'); ?>
+</h1>
 
     <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST" class="space-y-6">
         <input type="hidden" name="action" value="sample_form">
 
         <div class="space-y-8 sm:space-y-10 font-['Poppins'] font-semibold text-[16px] sm:text-[18px] md:text-[20px] tracking-[0.05em]">
-            <?php 
-            $questions = [
-                "How well do our services meet your expectations?",
-                "How effective have our marketing strategies been for your business?",
-                "How well do our branding strategies reflect your company’s vision?",
-                "How would you rate our responsiveness and communication?",
-                "How well do we understand your business goals and challenges?",
-                "How satisfied are you with the professionalism of our team?",
-                "How satisfied are you with the results so far?",
-            ];
+        <?php 
+          $questions = [
+              pll__('How well do our services meet your expectations?'),
+              pll__('How effective have our marketing strategies been for your business?'),
+              pll__('How well do our branding strategies reflect your company’s vision?'),
+              pll__('How would you rate our responsiveness and communication?'),
+              pll__('How well do we understand your business goals and challenges?'),
+              pll__('How satisfied are you with the professionalism of our team?'),
+              pll__('How satisfied are you with the results so far?'),
+          ];
 
-            $options = ["Very Poor", "Poor", "Average", "Good", "Excellent"];
+          $options = [
+              pll__('Very Poor'),
+              pll__('Poor'),
+              pll__('Average'),
+              pll__('Good'),
+              pll__('Excellent'),
+          ];
+          
 
             foreach ($questions as $index => $question): ?>
                 <div>
@@ -99,13 +106,12 @@ $formHeading = get_field('form_title');
 
         <div class="text-center pt-8 sm:pt-[45px]">
             <button type="submit" class="bg-[#8075F7] text-white px-4 sm:px-6 py-2 sm:py-3 font-semibold font-['Poppins'] text-[16px] sm:text-[18px] tracking-[0.05em]">
-                <?php the_field('form_submit'); ?>
+            <?php echo pll__('Submit'); ?>
             </button>
         </div>
     </form>
 </div>
 </section>
-
 
 
 <?php get_footer(); ?>

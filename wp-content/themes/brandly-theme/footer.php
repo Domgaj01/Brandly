@@ -11,12 +11,11 @@
     />
   </a>
 
-      <div class="space-y-3 text-[14px] leading-7 text-black tracking-[0.05em] font-['Poppins'] max-w-md">
-        <p>
-          We help businesses grow with marketing bundles. From SEO to rebranding, we create simple and effective solutions that make your brand stand out.
-        </p>
-      </div>
-
+  <div class="space-y-3 text-[14px] leading-7 text-black tracking-[0.05em] font-['Poppins'] max-w-md">
+  <p>
+    <?php echo esc_html( pll__('We help businesses grow with marketing bundles. From SEO to rebranding, we create simple and effective solutions that make your brand stand out.') ); ?>
+  </p>
+</div>
       
       <div class="mt-6 flex items-center space-x-4">
         <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-full">
@@ -51,10 +50,10 @@
     <nav class="md:col-span-1 xl:col-start-10 xl:col-end-12">
       <h3 class="text-[20px] sm:text-[24px] text-black mb-6 tracking-[0.05em] font-['Poppins'] font-semibold">Navigation</h3>
       <ul class="space-y-5 tracking-wide text-black">
-        <li><a href="<?php echo home_url('/'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Home </a></li>
-        <li><a href="<?php echo home_url('/goals'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Goals</a></li>
-        <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Blogs</a></li>
-        <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']">Help Us</a></li>
+        <li><a href="<?php echo home_url('/'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Home') );?> </a></li>
+        <li><a href="<?php echo home_url('/goals'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Goals') ); ?></a></li>
+        <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Blogs') ); ?></a></li>
+        <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:opacity-80 text-[16px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Help Us') ); ?></a></li>
       </ul>
     </nav>
 

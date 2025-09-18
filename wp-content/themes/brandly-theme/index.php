@@ -1,38 +1,41 @@
 <?php get_header(); ?>
-
+<?php if ( is_front_page() ) : ?>
+<?php
+  $mobile_title  = get_field('hero_title_mobile');
+  $desktop_title = get_field('hero_title_desktop');
+  $hero_image    = get_field('hero_image'); // array
+?>
 <section class="bg-white relative">
   <div id="hero-video"
        class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] 
               px-4 sm:px-6 py-12 xl:py-16 relative">
 
-    <!-- Mobile heading -->
-    <h1 class="xl:hidden text-center 
-               text-[32px] sm:text-[40px] 
-               leading-tight font-semibold tracking-[0.05em] font-['Poppins'] text-black">
-      "We Scale<br/>Businesses."
-    </h1>
+    <?php if ($mobile_title): ?>
+      <h1 class="xl:hidden text-center text-[32px] sm:text-[40px] leading-tight font-semibold tracking-[0.05em] font-['Poppins'] text-black">
+        <?php echo wp_kses_post($mobile_title); ?>
+      </h1>
+    <?php endif; ?>
 
-    <!-- Desktop hero (obrázok alebo video môžeš vrátiť sem) -->
-    <div class="xl:block xl:col-start-4 xl:col-end-12 relative overflow-hidden" style="aspect-ratio:16/9;">
-      <img
-        src="<?php echo esc_url( get_template_directory_uri().'/images/blogs-hero.jpg'); ?>"
-        alt="Hero image"
-        class="absolute inset-0 w-full h-full object-cover"
-        width="1920" height="1080"
-        loading="eager" fetchpriority="high" decoding="async" />
-      <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
-    </div>
+    <?php if (!empty($hero_image['url'])): ?>
+      <div id="hero-media" class="xl:block xl:col-start-4 xl:col-end-12 relative overflow-hidden" style="aspect-ratio:16/9;">
+        <img
+          src="<?php echo esc_url($hero_image['url']); ?>"
+          class="absolute inset-0 w-full h-full object-cover"
+          width="1920" height="1080"
+          loading="eager" fetchpriority="high" decoding="async" />
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+      </div>
+    <?php endif; ?>
 
-    <!-- Desktop heading -->
-    <h1 class="split-title hidden xl:flex xl:col-start-2 xl:col-end-5 
-               absolute top-1/2 -translate-y-1/2
-               text-[44px] sm:text-[64px] xl:text-[80px]
-               leading-none font-semibold tracking-[0.08em] font-['Poppins'] z-20 text-white">
-      We&nbsp;Scale<br/>Businesses.
-    </h1>
+    <?php if ($desktop_title): ?>
+      <h1 id="hero-title" class="split-title hidden xl:flex xl:col-start-2 xl:col-end-5 absolute top-1/2 -translate-y-1/2 text-[44px] sm:text-[64px] xl:text-[80px] leading-none font-semibold tracking-[0.08em] font-['Poppins'] z-20 text-white">
+        <?php echo wp_kses_post($desktop_title); ?>
+      </h1>
+    <?php endif; ?>
 
   </div>
 </section>
+
 
 
 
@@ -40,7 +43,7 @@
 (function(){
   const container = document.getElementById('hero-video');
   const mediaDesktop = document.getElementById('hero-media');
-  const title = document.getElementById('hero-video-title');
+  const title = document.getElementById('hero-title');
   if (!container || !title) return;
 
   const visible = el => {
@@ -161,6 +164,7 @@ $formHeading = get_field('form_title');
   </div>
 </section>
 
+
 <?php
 $bundle_heading = get_field('front_page_bundle_heading');
 $social_media   = get_field('social_media');   // ACF image array
@@ -181,7 +185,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#" class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl">
           <img src="<?php echo esc_url($social_media['url']); ?>"
-               alt="<?php echo esc_attr($social_media['alt']); ?>"
+               alt="<?php echo $social_media['alt']; ?>"
                width="<?php echo (int)$social_media['width']; ?>"
                height="<?php echo (int)$social_media['height']; ?>"
                loading="lazy" decoding="async"
@@ -191,7 +195,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#" class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl">
           <img src="<?php echo esc_url($seo['url']); ?>"
-               alt="<?php echo esc_attr($seo['alt']); ?>"
+               alt="<?php echo $seo['alt']; ?>"
                width="<?php echo (int)$seo['width']; ?>"
                height="<?php echo (int)$seo['height']; ?>"
                loading="lazy" decoding="async"
@@ -201,7 +205,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#" class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl">
           <img src="<?php echo esc_url($re_branding['url']); ?>"
-               alt="<?php echo esc_attr($re_branding['alt']); ?>"
+               alt="<?php echo $re_branding['alt']; ?>"
                width="<?php echo (int)$re_branding['width']; ?>"
                height="<?php echo (int)$re_branding['height']; ?>"
                loading="lazy" decoding="async"
@@ -211,7 +215,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#" class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl">
           <img src="<?php echo esc_url($all_in_one['url']); ?>"
-               alt="<?php echo esc_attr($all_in_one['alt']); ?>"
+               alt="<?php echo $all_in_one['alt']; ?>"
                width="<?php echo (int)$all_in_one['width']; ?>"
                height="<?php echo (int)$all_in_one['height']; ?>"
                loading="lazy" decoding="async"
@@ -251,6 +255,7 @@ if ($rev->have_posts()): ?>
     </div>
   </div>
 </section>
+<?php endif; ?>
 <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -107,14 +107,14 @@ function feedback_render_meta_box($post) {
   }
 
   $questions = [
-      "How well do our services meet your expectations?",
-      "How effective have our marketing strategies been for your business?",
-      "How well do our branding strategies reflect your company’s vision?",
-      "How would you rate our responsiveness and communication?",
-      "How well do we understand your business goals and challenges?",
-      "How satisfied are you with the professionalism of our team?",
-      "How satisfied are you with the results so far?",
-  ];
+    pll__('How well do our services meet your expectations?'),
+    pll__('How effective have our marketing strategies been for your business?'),
+    pll__('How well do our branding strategies reflect your company’s vision?'),
+    pll__('How would you rate our responsiveness and communication?'),
+    pll__('How well do we understand your business goals and challenges?'),
+    pll__('How satisfied are you with the professionalism of our team?'),
+    pll__('How satisfied are you with the results so far?'),
+];
 
   echo '<table class="widefat striped"><tbody>';
   foreach ($options as $index => $answer) {
@@ -133,6 +133,62 @@ add_action('wp_head', function () {
   echo '<link rel="preload" as="image" href="' . esc_url($poster) . '">';
 }, 1);
 
+add_action('init', function() {
+  // Headline
+  pll_register_string('form_heading', 'Help Us');
 
+  // Questions
+  pll_register_string('q1', 'How well do our services meet your expectations?');
+  pll_register_string('q2', 'How effective have our marketing strategies been for your business?');
+  pll_register_string('q3', 'How well do our branding strategies reflect your company’s vision?');
+  pll_register_string('q4', 'How would you rate our responsiveness and communication?');
+  pll_register_string('q5', 'How well do we understand your business goals and challenges?');
+  pll_register_string('q6', 'How satisfied are you with the professionalism of our team?');
+  pll_register_string('q7', 'How satisfied are you with the results so far?');
+
+  // Answer options
+  pll_register_string('a1', 'Very Poor');
+  pll_register_string('a2', 'Poor');
+  pll_register_string('a3', 'Average');
+  pll_register_string('a4', 'Good');
+  pll_register_string('a5', 'Excellent');
+
+  // Submit button
+  pll_register_string('form_submit', 'Submit');
+});
+add_filter('template_include', function ($template) {
+  // Mapuj lokalizované slugs -> konkrétne page-{slug}.php templaty (EN)
+  $map = [
+    'hjaelp-os' => 'page-help-us.php', // DA slug -> EN template
+    'maal'      => 'page-goals.php',   // DA slug (mål) -> EN template
+    'mal'       => 'page-goals.php',   // alternatívny slug bez diakritiky
+  ];
+
+  if (is_page(array_keys($map))) {
+    $slug = get_post_field('post_name', get_queried_object_id());
+    if (isset($map[$slug])) {
+      $alt = locate_template($map[$slug]);
+      if ($alt) return $alt;
+    }
+  }
+
+  return $template;
+});
+
+add_action('after_setup_theme', function () {
+  if (!function_exists('pll_register_string')) return;
+  foreach (['Home','Goals','Blogs','Help Us','Go to homepage'] as $s) {
+    pll_register_string('nav_'.$s, $s);
+  }
+});
+
+add_action('after_setup_theme', function () {
+  if (!function_exists('pll_register_string')) return;
+
+  pll_register_string(
+    'footer_about',
+    'We help businesses grow with marketing bundles. From SEO to rebranding, we create simple and effective solutions that make your brand stand out.'
+  );
+});
 
   ?>
