@@ -1,1 +1,0 @@
-.split-title{color:transparent;-webkit-text-fill-color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(to right,#000 0,#000 var(--split,50%),#fff var(--split,50%),#fff 100%);background-repeat:no-repeat;background-size:var(--bg-w,100%) 100%;background-position:calc(-1 * var(--bg-x, 0px)) 0}
