@@ -13,15 +13,15 @@
 
       <!-- Meta (Author + Date + Tags) -->
       <div class="flex flex-wrap items-center gap-4 text-sm sm:text-base font-['Poppins'] text-black/70 mb-8">
-        <span class="uppercase font-semibold text-[#8075F7]"><?php the_author(); ?></span>
+        <span class="uppercase font-semibold text-[#4F44C6]"><?php the_author(); ?></span>
         <span class="uppercase"><?php echo get_the_date('F j, Y'); ?></span>
 
         <?php if ( $tags = get_the_tags() ) : ?>
           <div class="flex flex-wrap gap-2 ml-4">
             <?php foreach ( $tags as $tag ) : ?>
               <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"
-                 class="text-[#8075F7] uppercase text-xs sm:text-sm font-bold hover:opacity-80 transition-opacity duration-200">
-                #<?php echo esc_html( $tag->name ); ?>
+                 class="text-[#4F44C6] uppercase text-xs sm:text-sm font-bold hover:opacity-80 transition-opacity duration-200">
+                <?php echo esc_html( $tag->name ); ?>
               </a>
             <?php endforeach; ?>
           </div>

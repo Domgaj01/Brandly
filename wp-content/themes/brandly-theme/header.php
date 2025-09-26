@@ -3,12 +3,10 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandly</title>
   <?php wp_head(); ?>
 </head>
 
 <body <?php body_class('bg-white'); ?>>
-
   <!-- Sticky Navbar -->
   <header class="sticky top-0 inset-x-0 z-50 bg-white backdrop-blur">
     <div class="mx-auto w-full max-w-[1440px] xl:h-[120px] xl:grid xl:grid-cols-12 xl:gap-x-[45px] items-center
@@ -25,7 +23,7 @@
   </a>
 </div>
   <!-- Nav (desktop only) -->
-<nav class="hidden xl:block xl:col-start-5 xl:col-end-10" aria-label="Primary">
+<nav class="hidden xl:block xl:col-start-5 xl:col-end-10" aria-label="Main menu">
   <ul class="flex justify-center items-center space-x-[45px] text-gray-800">
     <li><a href="<?php echo home_url('/'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Home') ); ?></a></li>
     <li><a href="<?php echo home_url('/goals'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Goals') ); ?></a></li>
@@ -33,16 +31,57 @@
     <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Help Us') ); ?></a></li>
   </ul>
 </nav>
-<!-- Language Selector (Navbar) -->
-<div class="relative xl:col-start-10 xl:col-end-11 font-[Poppins]">
-  <?php pll_the_languages([
-      'dropdown'   => 1,       // output as dropdown
-      'show_flags' => 1,       
-      'show_names' => 0,      
+
+<div id="lang-switcher-wrap"
+     class="relative xl:col-start-10 xl:col-end-11 font-[Poppins] min-w-[44px] min-h-[44px] flex items-center justify-center">
+
+  <!-- Visually hidden label text -->
+  <label for="lang-switcher" id="language-switcher-label" class="sr-only">
+    <?php echo esc_html( pll__('Select language') ); ?>
+  </label>
+
+  <?php
+    pll_the_languages([
+      'dropdown'      => 1,
+      'show_flags'    => 1,
+      'show_names'    => 0,
       'hide_if_empty' => 0,
-      'force_home'  => 0   
-  ]); ?>
+      'force_home'    => 0,
+      'dropdown_id'   => 'lang-switcher', // ensures <select id="lang-switcher">
+    ]);
+  ?>
 </div>
+
+
+<script>
+(function () {
+  var wrap = document.getElementById('lang-switcher-wrap');
+  if (!wrap) return;
+
+  var sel = wrap.querySelector('select');
+  if (!sel) return;
+
+  if (!sel.id) sel.id = 'language-switcher';
+
+
+  var labId = 'language-switcher-label';
+  sel.setAttribute('aria-labelledby', labId);
+
+  if (!sel.hasAttribute('aria-label')) {
+    sel.setAttribute('aria-label', <?php echo json_encode( pll__('Select language') ); ?>);
+  }
+
+  if (!wrap.querySelector('label[for="'+ sel.id +'"]')) {
+    var hardLabel = document.createElement('label');
+    hardLabel.className = 'sr-only';
+    hardLabel.setAttribute('for', sel.id);
+    hardLabel.textContent = <?php echo json_encode( pll__('Select language') ); ?>;
+    sel.parentNode.insertBefore(hardLabel, sel);
+  }
+})();
+</script>
+
+
 
 
       <!-- Cart -->
@@ -57,7 +96,7 @@
     </div>
 
    <!-- Mobile Nav -->
-<nav id="mobileNav" class="xl:hidden hidden border-t border-gray-200 bg-white">
+<nav id="mobileNav" class="xl:hidden hidden border-t border-gray-200 bg-white" aria-label="Main menu mobile">>
   <ul class="flex flex-col gap-2 px-4 sm:px-6 py-4 text-gray-800">
     <li><a href="<?php echo home_url('/'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Home') ); ?></a></li>
     <li><a href="<?php echo home_url('/goals'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Goals') ); ?></a></li>
@@ -65,6 +104,7 @@
     <li><a href="<?php echo home_url('/help-us'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Help Us') ); ?></a></li>
   </ul>
 </nav>
+</header>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {

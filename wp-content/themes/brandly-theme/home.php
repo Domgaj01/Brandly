@@ -1,14 +1,21 @@
-<?php get_header();?>
+<?php get_header();
 
-<section class="bg-white relative">
+$page_for_posts = get_option('page_for_posts');
+
+$blogs_title  = get_field('blogs_title',  $page_for_posts);
+$blogs_mobile = get_field('blogs_mobile', $page_for_posts);
+$blogs_hero   = get_field('blogs_hero',   $page_for_posts); // ACF return: Array
+?>
+
+<section class="bg-white relative" role="region" aria-labelledby="split-title-title" aria-describedby="blogs-heading">
   <div id="split-title"
        class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] items-center px-4 sm:px-6 py-8 xl:py-12 relative">
 
     <div id="split-title-img"
          class="xl:block xl:col-start-4 xl:col-end-12 relative h-[320px] sm:h-[420px] xl:h-[520px] overflow-hidden">
       <img
-        src="<?php echo get_template_directory_uri(); ?>/images/blogs-hero.jpg"
-        alt="Blogs Hero"
+        src="<?php echo $blogs_hero['url']; ?>"
+        alt="<?php echo $blogs_hero['alt']; ?>"
         class="absolute inset-0 w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black/30"></div>
     </div>
@@ -16,12 +23,15 @@
     <h1 id="split-title-title"
         class="split-title hidden xl:flex xl:col-start-3 xl:col-end-4 absolute top-1/2 -translate-y-1/2
                text-[44px] sm:text-[64px] xl:text-[80px] leading-none font-semibold tracking-[0.13em] font-['Poppins'] z-20">
-      Blogs
+      <?php echo $blogs_title; ?>
     </h1>
   </div>
 
-  <h1 class="block xl:hidden px-4 sm:px-6 mt-6 text-[32px] sm:text-[48px] font-semibold tracking-[0.05em] font-['Poppins'] text-black">Blogs</h1>
+  <h1 id="blogs-heading"class="block xl:hidden px-4 sm:px-6 mt-6 text-[32px] sm:text-[48px] font-semibold tracking-[0.05em] font-['Poppins'] text-black">
+    <?php echo $blogs_mobile; ?>
+  </h1>
 </section>
+
 
 <script>
 (function(){
@@ -74,8 +84,8 @@ if ( $q->have_posts() ) :
     );
   }
 ?>
-  <section class="bg-white">
-    <div class="mx-auto w-full max-w-[1440px] xl:grid xl:grid-cols-12 xl:gap-x-[45px] px-4 sm:px-6 py-10">
+  <section class="bg-white" role="region" aria-labelledby="blog-post-<?php the_ID(); ?>">
+    <div id="blog-post-<?php the_ID(); ?>" class="mx-auto w-full max-w-[1440px] xl:grid xl:grid-cols-12 xl:gap-x-[45px] px-4 sm:px-6 py-10">
 
       <!-- Image -->
       <a href="<?php the_permalink(); ?>" class="block h-[220px] sm:h-[280px] xl:h-[320px] overflow-hidden md:col-span-5 xl:col-start-1"> 
@@ -91,7 +101,7 @@ if ( $q->have_posts() ) :
   <?php if ( $tags = get_the_tags() ) : ?>
     <?php foreach ( $tags as $tag ) : ?>
       <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"
-         class="text-[#8075F7] text-[12px] font-['Poppins'] tracking-[0.05em] uppercase font-bold hover:opacity-80">
+         class="text-[#4F44C6] text-[12px] font-['Poppins'] tracking-[0.05em] uppercase font-bold hover:opacity-80">
         #<?php echo esc_html( $tag->name ); ?>
       </a>
     <?php endforeach; ?>
@@ -100,7 +110,7 @@ if ( $q->have_posts() ) :
   <?php if ( $cats = get_the_category() ) : ?>
     <?php foreach ( $cats as $cat ) : ?>
       <a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>"
-         class="text-[#8075F7] text-[12px] font-['Poppins'] tracking-[0.05em] uppercase font-normal hover:opacity-80">
+         class="text-[#4F44C6] text-[12px] font-['Poppins'] tracking-[0.05em] uppercase font-normal hover:opacity-80">
         <?php echo esc_html( $cat->name ); ?>
       </a>
     <?php endforeach; ?>
@@ -109,7 +119,7 @@ if ( $q->have_posts() ) :
 
 
         <!-- Title -->
-        <h2 class="text-[16px] sm:text-[16px] xl:text-[18px] font-semibold tracking-[0.05em]
+        <h2 class="text-1em sm:text-[16px] xl:text-[18px] font-semibold tracking-[0.05em]
                    font-['Poppins'] text-black uppercase mb-3">
           <a href="<?php the_permalink(); ?>" class="hover:opacity-90">
             <?php the_title(); ?>
@@ -117,13 +127,13 @@ if ( $q->have_posts() ) :
         </h2>
 
         
-        <p class="text-[16px] leading-7 text-black/80 font-['Poppins'] tracking-[0.05em] mb-5">
+        <p class="text-1em leading-7 text-black/80 font-['Poppins'] tracking-[0.05em] mb-5">
           <?php echo esc_html( $excerpt ); ?>
         </p>
 
         
         <div class="flex flex-wrap items-center gap-6 font-['Poppins'] text-[12px] tracking-[0.05em]">
-          <span class="uppercase font-semibold text-[#8075F7]"><?php the_author(); ?></span>
+          <span class="uppercase font-semibold text-[#4F44C6]"><?php the_author(); ?></span>
           <span class="uppercase font-light text-black"><?php echo esc_html( get_the_date('F j, Y') ); ?></span>
         </div>
       </div>

@@ -6,7 +6,7 @@ $text    = get_field('help_us_text');
 $image   = get_field('help_us_image'); 
 ?>
 
-<section class="bg-[#D9D9D9]">
+<section class="bg-[#D9D9D9]" role="region" aria-labelledby="about-heading" aria-describedby="about-text">
   <div class="mx-auto w-full max-w-[1440px]
               px-4 sm:px-6 py-10 lg:py-14 xl:py-16
               gap-y-8 lg:grid lg:grid-cols-12 lg:gap-x-[45px] items-center">
@@ -14,9 +14,9 @@ $image   = get_field('help_us_image');
     <!-- Left: Text -->
     <div class="lg:col-start-2 lg:col-end-7 xl:col-start-2 xl:col-end-7 order-2 lg:order-1">
       <?php if ($heading) : ?>
-        <h1 class="uppercase font-['Poppins'] font-semibold
+        <h1 id="about-heading"class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
-                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6">
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="Sustainability Initiatives">
           <?php echo esc_html($heading); ?>
         </h1>
       <?php endif; ?>
@@ -24,7 +24,9 @@ $image   = get_field('help_us_image');
       <?php if ($text) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
+                    <p id="about-text">
           <?php echo wp_kses_post( wpautop($text) ); ?>
+          </p>
         </div>
       <?php endif; ?>
     </div>
@@ -48,7 +50,7 @@ $text1    = get_field('goals_letters');
 $image1   = get_field('goals_photo'); 
 ?>
 
-<section class="bg-white">
+<section class="bg-white" role="region" aria-labelledby="goals-heading" aria-describedby="goals-text">
   <div class="mx-auto w-full max-w-[1440px]
               px-4 sm:px-6 py-10 lg:py-14 xl:py-16
               gap-y-8 lg:grid lg:grid-cols-12 lg:gap-x-[45px] items-center">
@@ -65,17 +67,19 @@ $image1   = get_field('goals_photo');
     <!-- Right: Text -->
     <div class="lg:col-start-7 lg:col-end-12 xl:col-start-7 xl:col-end-12 order-2">
       <?php if ($heading1) : ?>
-        <h1 class="uppercase font-['Poppins'] font-semibold
+        <h2 id="goals-heading" class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
-                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6">
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6"aria-label="How we support our goals?">
           <?php echo esc_html($heading1); ?>
-        </h1>
+        </h2>
       <?php endif; ?>
 
       <?php if ($text1) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
+                    <p id>
           <?php echo wp_kses_post( wpautop($text1) ); ?>
+      </p>
         </div>
       <?php endif; ?>
     </div>
@@ -83,17 +87,29 @@ $image1   = get_field('goals_photo');
   </div>
 </section>
 
-<section class="bg-white">
+<section class="bg-white"
+         role="region"
+         aria-labelledby="goals-region-heading">
+
+  <!-- Accessible name for the region (hidden) -->
+  <h2 id="goals-region-heading" class="sr-only">Our goals</h2>
+
   <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-10 lg:py-14 xl:py-16">
     <?php if ( have_rows('goals_items') ) : ?>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
 
-        <?php while ( have_rows('goals_items') ) : the_row();
-          $img   = get_sub_field('goals_image'); 
+        <?php
+        $i = 0;
+        while ( have_rows('goals_items') ) : the_row();
+          $img   = get_sub_field('goals_image');
           $title = get_sub_field('goals_title');
           $text  = get_sub_field('goals_text');
+          $i++;
+          $title_id = 'goal-title-' . $i;
         ?>
-          <div class="flex flex-col items-center">
+          <article class="flex flex-col items-center"
+                   <?php if ($title) : ?>aria-labelledby="<?php echo esc_attr($title_id); ?>"<?php endif; ?>>
+
             <?php if ($img) : ?>
               <img src="<?php echo esc_url($img['url']); ?>"
                    alt="<?php echo esc_attr($img['alt']); ?>"
@@ -101,9 +117,10 @@ $image1   = get_field('goals_photo');
             <?php endif; ?>
 
             <?php if ($title) : ?>
-              <h2 class="font-['Poppins'] font-bold text-[32px] text-[#8075F7] tracking-[0.05em] mb-4">
+              <h3 id="<?php echo esc_attr($title_id); ?>"
+                  class="font-['Poppins'] font-bold text-[32px] text-[#8075F7] tracking-[0.05em] mb-4">
                 <?php echo esc_html($title); ?>
-              </h2>
+              </h3>
             <?php endif; ?>
 
             <?php if ($text) : ?>
@@ -111,12 +128,14 @@ $image1   = get_field('goals_photo');
                 <?php echo wp_kses_post( wpautop($text) ); ?>
               </div>
             <?php endif; ?>
-          </div>
+
+          </article>
         <?php endwhile; ?>
 
       </div>
     <?php endif; ?>
   </div>
 </section>
+
 
 <?php get_footer(); ?>

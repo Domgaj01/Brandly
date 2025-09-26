@@ -7,7 +7,7 @@ $cta_url     = get_field('help_us_cta_url');
 $formHeading = get_field('form_title');        
 ?>
 
-<section class="bg-[#D9D9D9]">
+<section class="bg-[#D9D9D9]" role="region" aria-labelledby="about-heading" aria-describedby="about-text">
   <div class="mx-auto w-full max-w-[1440px]
               px-4 sm:px-6 py-10 lg:py-14 xl:py-16
               gap-y-8 lg:grid lg:grid-cols-12 lg:gap-x-[45px] items-center">
@@ -15,9 +15,9 @@ $formHeading = get_field('form_title');
     <!-- Left: Text -->
     <div class="lg:col-start-2 lg:col-end-7 xl:col-start-2 xl:col-end-7 order-2 lg:order-1">
       <?php if ($heading) : ?>
-        <h1 class="uppercase font-['Poppins'] font-semibold
+        <h1  id="about-heading"class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
-                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6">
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="Welcome to Brandly.">
           <?php echo esc_html($heading); ?>
         </h1>
       <?php endif; ?>
@@ -25,7 +25,9 @@ $formHeading = get_field('form_title');
       <?php if ($text) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
+                    <p id="about-text">
           <?php echo wp_kses_post( wpautop($text) ); ?>
+          </p>
         </div>
       <?php endif; ?>
 
@@ -59,57 +61,70 @@ $formHeading = get_field('form_title');
 </section>
 
 
-<section>
+<section role="region" aria-labelledby="form-heading" aria-describedby="form-questions form-answears" >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-    <h1 class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11">
+    <h2 id="form-heading" class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11" aria-label="Help">
     <?php echo pll__('Help Us'); ?>
-</h1>
+</h2>
 
-    <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST" class="space-y-6">
-        <input type="hidden" name="action" value="sample_form">
+<form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST" class="space-y-6">
+    <input type="hidden" name="action" value="sample_form">
 
-        <div class="space-y-8 sm:space-y-10 font-['Poppins'] font-semibold text-[16px] sm:text-[18px] md:text-[20px] tracking-[0.05em]">
-        <?php 
-          $questions = [
-              pll__('How well do our services meet your expectations?'),
-              pll__('How effective have our marketing strategies been for your business?'),
-              pll__('How well do our branding strategies reflect your company’s vision?'),
-              pll__('How would you rate our responsiveness and communication?'),
-              pll__('How well do we understand your business goals and challenges?'),
-              pll__('How satisfied are you with the professionalism of our team?'),
-              pll__('How satisfied are you with the results so far?'),
-          ];
+    <div class="space-y-8 sm:space-y-10 font-['Poppins'] font-semibold text-[16px] sm:text-[18px] md:text-[20px] tracking-[0.05em]">
+    <?php 
+      $questions = [
+          pll__('How well do our services meet your expectations?'),
+          pll__('How effective have our marketing strategies been for your business?'),
+          pll__('How well do our branding strategies reflect your company’s vision?'),
+          pll__('How would you rate our responsiveness and communication?'),
+          pll__('How well do we understand your business goals and challenges?'),
+          pll__('How satisfied are you with the professionalism of our team?'),
+          pll__('How satisfied are you with the results so far?'),
+      ];
 
-          $options = [
-              pll__('Very Poor'),
-              pll__('Poor'),
-              pll__('Average'),
-              pll__('Good'),
-              pll__('Excellent'),
-          ];
-          
+      $options = [
+          pll__('Very Poor'),
+          pll__('Poor'),
+          pll__('Average'),
+          pll__('Good'),
+          pll__('Excellent'),
+      ];
+      
+      foreach ($questions as $index => $question): ?>
+        <fieldset class="space-y-2">
+          <legend class="mb-2"><?php echo $question; ?> <span class="text-red-600">*</span></legend>
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-8 md:gap-12">
+              <?php foreach ($options as $optIndex => $option): 
+                  $id = 'q' . $index . '_opt' . $optIndex;
+              ?>
+                  <div class="flex items-center gap-2 w-1/2 sm:w-auto">
+                      <input 
+                          type="radio" 
+                          id="<?php echo $id; ?>" 
+                          name="answers[<?php echo $index; ?>]" 
+                          value="<?php echo $option; ?>" 
+                          class="bg-[#4F44C6]"
+                      >
+                      <label 
+                          for="<?php echo $id; ?>" 
+                          class="font-['Poppins'] text-[11px] sm:text-[12px] md:text-[14px] font-semibold tracking-[0.05em]"
+                      >
+                          <?php echo $option; ?>
+                      </label>
+                  </div>
+              <?php endforeach; ?>
+          </div>
+        </fieldset>
+      <?php endforeach; ?>
+    </div>
 
-            foreach ($questions as $index => $question): ?>
-                <div>
-                    <p class="mb-2"><?php echo $question; ?></p>
-                    <div class="flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-8 md:gap-12">
-                        <?php foreach ($options as $option): ?>
-                            <label class="flex items-center gap-2 w-1/2 sm:w-auto">
-                                <input type="radio" name="answers[<?php echo $index; ?>]" value="<?php echo $option; ?>" class="bg-[#8075F7]">
-                                <span class="font-['Poppins'] text-[11px] sm:text-[12px] md:text-[14px] font-semibold tracking-[0.05em]"><?php echo $option; ?></span>
-                            </label>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+    <div class="text-center pt-8 sm:pt-[45px]">
+        <button type="submit" class="bg-[#333333] text-white px-4 sm:px-6 py-2 sm:py-3 font-semibold font-['Poppins'] text-[16px] sm:text-[18px] tracking-[0.05em]">
+          <?php echo pll__('Submit'); ?>
+        </button>
+    </div>
+</form>
 
-        <div class="text-center pt-8 sm:pt-[45px]">
-            <button type="submit" class="bg-[#8075F7] text-white px-4 sm:px-6 py-2 sm:py-3 font-semibold font-['Poppins'] text-[16px] sm:text-[18px] tracking-[0.05em]">
-            <?php echo pll__('Submit'); ?>
-            </button>
-        </div>
-    </form>
 </div>
 </section>
 

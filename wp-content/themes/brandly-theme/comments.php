@@ -96,13 +96,13 @@ if ( post_password_required() ) {
         $fields = [
             'author' =>
                 '<p class="comment-form-author">' .
-                '<label class="block text-sm font-medium mb-1" for="author">' . __( 'Name', 'textdomain' ) . ( $req ? ' <span class="text-[#8075F7]">*</span>' : '' ) . '</label>' .
+                '<label class="block text-sm font-medium mb-1" for="author">' . __( 'Name', 'textdomain' ) . ( $req ? ' <span class="text-[#4F44C6]">*</span>' : '' ) . '</label>' .
                 '<input id="author" name="author" type="text" value="' . esc_attr( wp_get_current_commenter()['comment_author'] ?? '' ) . '" ' . ( $req ? 'required' : '' ) . ' class="w-full border border-gray-200 focus:border-[#8075F7] focus:ring-2 focus:ring-[#8075F7]/30 px-4 py-2 outline-none" placeholder="Your name" />' .
                 '</p>',
 
             'email'  =>
                 '<p class="comment-form-email mt-4">' .
-                '<label class="block text-sm font-medium mb-1" for="email">' . __( 'Email', 'textdomain' ) . ( $req ? ' <span class="text-[#8075F7]">*</span>' : '' ) . '</label>' .
+                '<label class="block text-sm font-medium mb-1" for="email">' . __( 'Email', 'textdomain' ) . ( $req ? ' <span class="text-[#4F44C6]">*</span>' : '' ) . '</label>' .
                 '<input id="email" name="email" type="email" value="' . esc_attr( wp_get_current_commenter()['comment_author_email'] ?? '' ) . '" ' . ( $req ? 'required' : '' ) . ' class="w-full border border-gray-200 focus:border-[#8075F7] focus:ring-2 focus:ring-[#8075F7]/30 px-4 py-2 outline-none" placeholder="you@brandly.com" />' .
                 '</p>',
         ];
@@ -115,21 +115,21 @@ if ( post_password_required() ) {
             // Custom "logged in as" text
             'logged_in_as' => '<p class="text-sm text-gray-700">' .
                 sprintf(
-                    __( 'You are logged in as %1$s. <a href="%2$s" class="text-[#8075F7] hover:text-[#6f62f4] font-medium">Edit profile</a> • <a href="%3$s" class="text-[#8075F7] hover:text-[#6f62f4] font-medium">Log out</a>', 'textdomain' ),
+                    __( 'You are logged in as %1$s. <a href="%2$s" class="text-[#4F44C6] hover:text-[#6f62f4] font-medium">Edit profile</a> • <a href="%3$s" class="text-[#4F44C6] hover:text-[#6f62f4] font-medium">Log out</a>', 'textdomain' ),
                     esc_html( wp_get_current_user()->display_name ),
                     esc_url( admin_url( 'profile.php' ) ),
                     esc_url( wp_logout_url( get_permalink() ) )
                 ) .
-                '</p><p class="text-xs text-gray-400 mt-1">Required fields are marked <span class="text-[#8075F7]">*</span></p>',
+                '</p><p class="text-xs text-gray-600 mt-1 leading-normal">Required fields are marked <span class="text-[#4F44C6]">*</span></p>',
         
             'comment_field'  =>
                 '<p class="comment-form-comment">' .
                 '<label class="block text-sm font-medium mb-1" for="comment">' . __( 'Comment', 'textdomain' ) . '</label>' .
-                '<textarea id="comment" name="comment" rows="5" required class="w-full border border-gray-200 focus:border-[#8075F7] focus:ring-2 focus:ring-[#8075F7]/30 px-4 py-3 outline-none placeholder:text-gray-400" placeholder="Share your thoughts…"></textarea>' .
+                '<textarea id="comment" name="comment" rows="5" required class="w-full border border-gray-200 focus:border-[#4F44C6] focus:ring-2 focus:ring-[#8075F7]/30 px-4 py-3 outline-none placeholder:text-gray-400" placeholder="Share your thoughts…"></textarea>' .
                 '</p>',
         
             'class_form'     => 'bg-white shadow-sm ring-1 ring-gray-100 p-5 md:p-6',
-            'class_submit'   => 'inline-flex items-center justify-center bg-[#8075F7] hover:bg-[#6f62f4] text-white px-5 py-2 font-semibold transition',
+            'class_submit'   => 'inline-flex items-center justify-center bg-[#4F44C6] hover:bg-[#6f62f4] text-white px-5 py-2 font-semibold transition',
             'label_submit'   => __( 'Post Comment', 'textdomain' ),
         ]);
         ?>
