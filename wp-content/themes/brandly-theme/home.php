@@ -7,7 +7,7 @@ $blogs_mobile = get_field('blogs_mobile', $page_for_posts);
 $blogs_hero   = get_field('blogs_hero',   $page_for_posts); // ACF return: Array
 ?>
 
-<section class="bg-white relative" role="region" aria-labelledby="split-title-title" aria-describedby="blogs-heading">
+<section class="bg-white relative" role="region" aria-labelledby="split-title-title" aria-describedby="blogs-heading" tabindex="0">
   <div id="split-title"
        class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] items-center px-4 sm:px-6 py-8 xl:py-12 relative">
 

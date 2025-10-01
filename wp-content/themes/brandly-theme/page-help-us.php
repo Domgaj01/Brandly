@@ -17,7 +17,7 @@ $formHeading = get_field('form_title');
       <?php if ($heading) : ?>
         <h1  id="about-heading"class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
-                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="Welcome to Brandly.">
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="<?php echo pll__('Welcome to Brandly.'); ?>" tabindex="0">
           <?php echo esc_html($heading); ?>
         </h1>
       <?php endif; ?>
@@ -25,7 +25,7 @@ $formHeading = get_field('form_title');
       <?php if ($text) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
-                    <p id="about-text">
+                    <p id="about-text" tabindex="0">
           <?php echo wp_kses_post( wpautop($text) ); ?>
           </p>
         </div>
@@ -38,7 +38,7 @@ $formHeading = get_field('form_title');
                     bg-black text-white
                     px-6 py-4 font-['Poppins'] text-[14px] sm:text-[16px] tracking-[0.05em]
                     hover:shadow-[0_6px_0_rgba(0,0,0,0.2)]
-                    transition-transform hover:-translate-y-[2px]">
+                    transition-transform hover:-translate-y-[2px]" aria-label="<?php echo pll__('Schedule a consultation'); ?>">
             <?php echo esc_html($cta_txt); ?>
           </a>
         </div>
@@ -63,14 +63,14 @@ $formHeading = get_field('form_title');
 
 <section role="region" aria-labelledby="form-heading" aria-describedby="form-questions form-answears" >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-    <h2 id="form-heading" class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11" aria-label="Help">
+    <h2 id="form-heading" class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11" aria-label=" Help Us with form" tabindex="0">
     <?php echo pll__('Help Us'); ?>
 </h2>
 
 <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST" class="space-y-6">
     <input type="hidden" name="action" value="sample_form">
 
-    <div class="space-y-8 sm:space-y-10 font-['Poppins'] font-semibold text-[16px] sm:text-[18px] md:text-[20px] tracking-[0.05em]">
+    <div class="space-y-8 sm:space-y-10 font-['Poppins'] font-semibold text-[16px] sm:text-[18px] md:text-[20px] tracking-[0.05em]" tabindex="0" >
     <?php 
       $questions = [
           pll__('How well do our services meet your expectations?'),
@@ -107,7 +107,7 @@ $formHeading = get_field('form_title');
                       >
                       <label 
                           for="<?php echo $id; ?>" 
-                          class="font-['Poppins'] text-[11px] sm:text-[12px] md:text-[14px] font-semibold tracking-[0.05em]"
+                          class="font-['Poppins'] text-[11px] sm:text-[12px] md:text-[14px] font-semibold tracking-[0.05em]"  
                       >
                           <?php echo $option; ?>
                       </label>

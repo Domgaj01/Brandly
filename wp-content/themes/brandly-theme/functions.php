@@ -155,7 +155,20 @@ add_action('init', function() {
 
   // Submit button
   pll_register_string('form_submit', 'Submit');
+
+  // Form aria labels
+  pll_register_string('about-us-heading', 'Welcome to Brandly.');
+  pll_register_string('help-us-heading', 'Help Us with form');
+  pll_register_string('sustainibility-heading', 'Sustainability Initiatives');
+  pll_register_string('goals-heading', 'How we support our goals?');
+  pll_register_string('hero-title', 'Hero title');
+  pll_register_string('about-us-button', 'Schedule a consultation');
+  pll_register_string('bundle1', 'Learn more about Social Media bundle');
+  pll_register_string('bundle2', 'Learn more about SEO bundle');
+  pll_register_string('bundle3', 'Learn more about Rebranding bundle');
+  pll_register_string('bundle4', 'Learn more about All-in-One bundle');
 });
+
 add_filter('template_include', function ($template) {
   // Mapuj lokalizované slugs -> konkrétne page-{slug}.php templaty (EN)
   $map = [

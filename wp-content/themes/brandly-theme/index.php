@@ -5,14 +5,14 @@
   $desktop_title = get_field('hero_title_desktop');
   $hero_image    = get_field('hero_image'); // array
 ?>
-<main id="main-content" tabindex="-1" class="p-6">
-<section role="banner" class="bg-white relative">
+<main id="main-content" class="p-6">
+<section role="banner" class="bg-white relative" tabindex="0">
   <div id="hero-video"
        class="mx-auto w-full max-w-[1440px] grid xl:grid-cols-12 xl:gap-x-[45px] 
               px-4 sm:px-6 py-12 xl:py-16 relative">
 
     <?php if ($mobile_title): ?>
-      <h1 id="hero-h1"class="xl:hidden text-center text-[32px] sm:text-[40px] leading-tight font-semibold tracking-[0.05em] font-['Poppins'] text-black" aria-label="Hero title">
+      <h1 id="hero-h1"class="xl:hidden text-center text-[32px] sm:text-[40px] leading-tight font-semibold tracking-[0.05em] font-['Poppins'] text-black" tabindex="0" aria-label="<?php echo pll__('Hero title'); ?>">
         <?php echo wp_kses_post($mobile_title); ?>
       </h1>
     <?php endif; ?>
@@ -30,7 +30,7 @@
     <?php endif; ?>
 
     <?php if ($desktop_title): ?>
-      <h1 id="hero-title" class="split-title hidden xl:flex xl:col-start-2 xl:col-end-5 absolute top-1/2 -translate-y-1/2 text-[44px] sm:text-[64px] xl:text-[80px] leading-none font-semibold tracking-[0.08em] font-['Poppins'] z-20 text-white" aria-label="Hero title">
+      <h1 id="hero-title" class="split-title hidden xl:flex xl:col-start-2 xl:col-end-5 absolute top-1/2 -translate-y-1/2 text-[44px] sm:text-[64px] xl:text-[80px] leading-none font-semibold tracking-[0.08em] font-['Poppins'] z-20 text-white" aria-label="<?php echo pll__('Hero title'); ?>">
         <?php echo wp_kses_post($desktop_title); ?>
       </h1>
     <?php endif; ?>
@@ -101,9 +101,9 @@ $trust_sub3  = get_field('trust_sub3');
   <!-- Optional extra description -->
   <p id="trust-region-desc" class="sr-only">Trust badges showing key achievements and guarantees.</p>
 
-  <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-10 md:py-14">
+  <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-10 md:py-14" >
     <dl class="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0">
-      <div class="flex flex-col items-center text-center">
+      <div class="flex flex-col items-center text-center" tabindex="0">
         <dt class="font-['Poppins'] font-bold text-[40px] md:text-[48px] text-black">
           <?php echo esc_html($trust1); ?>
         </dt>
@@ -112,7 +112,7 @@ $trust_sub3  = get_field('trust_sub3');
         </dd>
       </div>
 
-      <div class="flex flex-col items-center text-center">
+      <div class="flex flex-col items-center text-center" tabindex="0">
         <dt class="font-['Poppins'] font-bold text-[40px] md:text-[48px] text-black">
           <?php echo esc_html($trust2); ?>
         </dt>
@@ -121,7 +121,7 @@ $trust_sub3  = get_field('trust_sub3');
         </dd>
       </div>
 
-      <div class="flex flex-col items-center text-center">
+      <div class="flex flex-col items-center text-center" tabindex="0">
         <dt class="font-['Poppins'] font-bold text-[40px] md:text-[48px] text-black">
           <?php echo esc_html($trust3); ?>
         </dt>
@@ -152,14 +152,14 @@ $formHeading = get_field('form_title');
     <!-- Left: Text -->
     <div class="lg:col-start-2 lg:col-end-7 xl:col-start-2 xl:col-end-7 order-2 lg:order-1">
       <?php if ($heading) : ?>
-        <h2  id="about-heading"class="uppercase font-['Poppins'] font-semibold text-[28px] sm:text-[32px] xl:text-[36px] leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="About us heading">
+        <h2  id="about-heading" tabindex="0" class="uppercase font-['Poppins'] font-semibold text-[28px] sm:text-[32px] xl:text-[36px] leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="<?php echo pll__('Welcome to Brandly.'); ?>">
           <?php echo esc_html($heading); ?>
         </h2>
       <?php endif; ?>
 
       <?php if ($text) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px] leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
-          <p id="about-text">
+          <p id="about-text" tabindex="0">
           <?php echo wp_kses_post( wpautop($text) ); ?>
           </p>
         </div>
@@ -168,7 +168,7 @@ $formHeading = get_field('form_title');
       <?php if ($cta_txt && $cta_url) : ?>
         <div class="mt-6 sm:mt-8">
           <a href="<?php echo esc_url($cta_url); ?>"
-             id="about-cta"class="inline-flex w-full sm:w-auto items-center justify-center bg-black text-white px-6 py-4 font-['Poppins'] text-[14px] sm:text-[16px] tracking-[0.05em] hover:shadow-[0_6px_0_rgba(0,0,0,0.2)] transition-transform hover:-translate-y-[2px]" aria-label="Schedule a consultation">
+             id="about-cta"class="inline-flex w-full sm:w-auto items-center justify-center bg-black text-white px-6 py-4 font-['Poppins'] text-[14px] sm:text-[16px] tracking-[0.05em] hover:shadow-[0_6px_0_rgba(0,0,0,0.2)] transition-transform hover:-translate-y-[2px]" aria-label="<?php echo pll__('Schedule a consultation'); ?>">
             <?php echo esc_html($cta_txt); ?>
           </a>
         </div>
@@ -206,7 +206,7 @@ $all_in_one     = get_field('all_in_one');
 <section class="bg-white" role="region" aria-labelledby="bundle-heading">
   <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-12 md:py-16">
     <!-- Heading -->
-    <h2 class="text-center font-['Poppins'] font-bold text-[32px] md:text-[40px] text-black mb-10 md:mb-14" id="bundle-heading">
+    <h2 class="text-center font-['Poppins'] font-bold text-[32px] md:text-[40px] text-black mb-10 md:mb-14" id="bundle-heading" tabindex="0">
       <?php echo esc_html($bundle_heading); ?>
     </h2>
 
@@ -215,7 +215,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#"
            class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="Learn more about Social Media bundle">
+           aria-label="<?php echo pll__('Learn more about Social Media bundle'); ?>">
           <img src="<?php echo esc_url($social_media['url']); ?>"
                alt="<?php echo $social_media['alt']; ?>"
                width="<?php echo (int)$social_media['width']; ?>"
@@ -227,7 +227,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#"
            class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="Learn more about SEO bundle">
+           aria-label="<?php echo pll__('Learn more about SEO bundle'); ?>">
           <img src="<?php echo esc_url($seo['url']); ?>"
                alt="<?php echo $seo['alt']; ?>"
                width="<?php echo (int)$seo['width']; ?>"
@@ -239,7 +239,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#"
            class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="Learn more about Rebranding bundle">
+           aria-label="<?php echo pll__('Learn more about Rebranding bundle'); ?>">
           <img src="<?php echo esc_url($re_branding['url']); ?>"
                alt="<?php echo $re_branding['alt']; ?>"
                width="<?php echo (int)$re_branding['width']; ?>"
@@ -251,7 +251,7 @@ $all_in_one     = get_field('all_in_one');
       <li>
         <a href="#"
            class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="Learn more about All-in-One bundle">
+           aria-label="<?php echo pll__('Learn more about All-in-One bundle'); ?>">
           <img src="<?php echo esc_url($all_in_one['url']); ?>"
                alt="<?php echo $all_in_one['alt']; ?>"
                width="<?php echo (int)$all_in_one['width']; ?>"
@@ -284,7 +284,7 @@ if ( $rev->have_posts() ) : ?>
         $time  = get_field('time_ago');
         $title_id = 'review-title-' . get_the_ID(); // unique ID per article
       ?>
-      <article class="bg-[#D9D9D9]/60 p-6 md:p-7 shadow-sm" aria-labelledby="<?php echo esc_attr( $title_id ); ?>">
+      <article class="bg-[#D9D9D9]/60 p-6 md:p-7 shadow-sm" aria-labelledby="<?php echo esc_attr( $title_id ); ?>" tabindex="0">
         <h3 id="<?php echo esc_attr( $title_id ); ?>" class="text-[24px] font-semibold text-black font-['Poppins'] mb-2">
           <?php echo esc_html( $title ); ?>
         </h3>

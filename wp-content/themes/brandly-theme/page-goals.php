@@ -16,7 +16,7 @@ $image   = get_field('help_us_image');
       <?php if ($heading) : ?>
         <h1 id="about-heading"class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
-                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="Sustainability Initiatives">
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6" aria-label="<?php echo pll__('Sustainability Initiatives'); ?>" tabindex="0">
           <?php echo esc_html($heading); ?>
         </h1>
       <?php endif; ?>
@@ -24,7 +24,7 @@ $image   = get_field('help_us_image');
       <?php if ($text) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
-                    <p id="about-text">
+                    <p id="about-text" tabindex="0">
           <?php echo wp_kses_post( wpautop($text) ); ?>
           </p>
         </div>
@@ -69,7 +69,7 @@ $image1   = get_field('goals_photo');
       <?php if ($heading1) : ?>
         <h2 id="goals-heading" class="uppercase font-['Poppins'] font-semibold
                    text-[28px] sm:text-[32px] xl:text-[36px]
-                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6"aria-label="How we support our goals?">
+                   leading-[1.15] tracking-[0.05em] text-black mb-5 sm:mb-6"aria-label="<?php echo pll__('How we support our goals?'); ?>" tabindex="0">
           <?php echo esc_html($heading1); ?>
         </h2>
       <?php endif; ?>
@@ -77,7 +77,7 @@ $image1   = get_field('goals_photo');
       <?php if ($text1) : ?>
         <div class="text-black font-['Poppins'] text-[15px] sm:text-[17px] xl:text-[18px]
                     leading-7 sm:leading-8 tracking-[0.02em] space-y-4 mb-6 sm:mb-8 max-w-[68ch]">
-                    <p id>
+                    <p id="goals-text" tabindex="0">
           <?php echo wp_kses_post( wpautop($text1) ); ?>
       </p>
         </div>
@@ -118,13 +118,13 @@ $image1   = get_field('goals_photo');
 
             <?php if ($title) : ?>
               <h3 id="<?php echo esc_attr($title_id); ?>"
-                  class="font-['Poppins'] font-bold text-[32px] text-[#8075F7] tracking-[0.05em] mb-4">
+                  class="font-['Poppins'] font-bold text-[32px] text-[#8075F7] tracking-[0.05em] mb-4" tabindex="0">
                 <?php echo esc_html($title); ?>
               </h3>
             <?php endif; ?>
 
             <?php if ($text) : ?>
-              <div class="font-['Poppins'] text-black text-[18px] tracking-[0.05em] leading-7 max-w-[38ch]">
+              <div class="font-['Poppins'] text-black text-[18px] tracking-[0.05em] leading-7 max-w-[38ch]" tabindex="0">
                 <?php echo wp_kses_post( wpautop($text) ); ?>
               </div>
             <?php endif; ?>
