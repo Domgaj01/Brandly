@@ -1,0 +1,186 @@
+<?php
+/**
+ * This file is part of GAuth plugin.
+ *
+ * @package miniOrange-2-factor-authentication/handler
+ */
+
+namespace TwoFA\Handler;
+
+use TwoFA\Helper\MoWpnsConstants;
+use TwoFA\Helper\MoWpnsHandler;
+use TwoFA\Traits\Instance;
+use WP_Error;
+use DateTimeZone;
+use DateTime;
+use Exception;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+if ( ! class_exists( 'AjaxHandler' ) ) {
+
+	/**
+	 * Class Ajaxhandler
+	 */
+	class AjaxHandler {
+
+		use Instance;
+
+		/**
+		 * Class Ajaxhandler constructor
+		 */
+		public function __construct() {
+			add_action( 'admin_init', array( $this, 'mo_wpns_2fa_actions' ) );
+		}
+
+		/**
+		 * Checks for the requested option value in the switch case.
+		 *
+		 * @return object
+		 */
+		public function mo_wpns_2fa_actions() {
+			$nonce = isset( $_GET['nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['nonce'] ) ) : '';
+			if ( ! wp_verify_nonce( $nonce, 'mo2f_settings_nonce' ) ) {
+				$error = new WP_Error();
+				$error->add( 'empty_username_Hello', '<strong>' . __( 'ERROR', 'miniorange-2-factor-authentication' ) . '</strong>: ' . __( 'Invalid Request.', 'miniorange-2-factor-authentication' ) );
+				return $error;
+			} elseif ( current_user_can( 'manage_options' ) && isset( $_REQUEST['option'] ) ) {
+				$option = sanitize_text_field( wp_unslash( $_REQUEST['option'] ) );
+				$ip     = isset( $_GET['ip'] ) ? filter_var( wp_unslash( $_GET['ip'] ), FILTER_VALIDATE_IP ) : null;
+
+				switch ( $option ) {
+					case 'whitelistself':
+						$this->whitelist_self();
+						break;
+
+					case 'dismissplugin':
+						$this->wpns_plugin_notice();
+						break;
+
+					case 'plugin_warning_never_show_again':
+						$this->wpns_plugin_warning_never_show_again();
+						break;
+
+					case 'mo2f_banner_never_show_again':
+						$this->wpns_mo2f_banner_never_show_again();
+						break;
+
+					case 'dismissSms':
+						$this->wpns_sms_notice();
+						break;
+
+					case 'dismissEmail':
+						$this->wpns_email_notice();
+						break;
+
+					case 'dismissSms_always':
+						$this->wpns_sms_notice_always();
+						break;
+
+					case 'dismissEmail_always':
+						$this->wpns_email_notice_always();
+						break;
+
+					case 'dismisscodeswarning':
+						$this->mo2f_backup_codes_dismiss();
+						break;
+				}
+			}
+		}
+
+		/**
+		 * Whitelists the self ip adress.
+		 *
+		 * @return void
+		 */
+		private function whitelist_self() {
+			global $mo_wpns_utility;
+			$mo_plugins_utility = new MoWpnsHandler();
+			$mo_plugins_utility->mo2f_whitelist_ip( $mo_wpns_utility->get_client_ip() );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Updates the malware notification and notice dismiss time options in the options table.
+		 */
+		private function wpns_plugin_notice() {
+			update_site_option( 'malware_notification_option', 1 );
+			update_site_option( 'notice_dismiss_time', time() );
+			wp_send_json_success();
+		}
+
+
+		/**
+		 * Updates the plugin warning never show again option in the options table.
+		 */
+		public function wpns_plugin_warning_never_show_again() {
+			update_site_option( 'plugin_warning_never_show_again', 1 );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Updates the banner never show again option in the options table.
+		 *
+		 * @return void
+		 */
+		public function wpns_mo2f_banner_never_show_again() {
+			update_site_option( 'mo2f_banner_never_show_again', 1 );
+			wp_send_json_success();
+		}
+
+
+		/**
+		 * Updates the wpns sms dismiss option in the options table.
+		 *
+		 * @return void
+		 */
+		private function wpns_sms_notice() {
+			update_site_option( 'mo2f_wpns_sms_dismiss', time() );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Updates the wpns email dismiss option in the options table.
+		 *
+		 * @return void
+		 */
+		private function wpns_email_notice() {
+			update_site_option( 'mo2f_wpns_email_dismiss', time() );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Updates the show low sms notice option in the database.
+		 *
+		 * @return void
+		 */
+		private function wpns_sms_notice_always() {
+			update_site_option( 'mo2f_wpns_donot_show_low_sms_notice', 1 );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Updates the show low email notice option in the database.
+		 *
+		 * @return void
+		 */
+		private function wpns_email_notice_always() {
+			update_site_option( 'mo2f_wpns_donot_show_low_email_notice', 1 );
+			wp_send_json_success();
+		}
+
+		/**
+		 * Updates the current user meta for the given meta key in the usermeta table.
+		 *
+		 * @return void
+		 */
+		private function mo2f_backup_codes_dismiss() {
+			$user_id = get_current_user_id();
+			update_user_meta( $user_id, 'donot_show_backup_code_notice', 1 );
+			wp_send_json_success();
+		}
+	}
+	new AjaxHandler();
+}

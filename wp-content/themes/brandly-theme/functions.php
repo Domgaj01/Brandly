@@ -11,10 +11,10 @@ wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, fals
         add_theme_support('post-thumbnails');
       });
       add_action('wp_enqueue_scripts', function () {
-        // tvoje hlavné CSS (napr. style.css)
+        
         wp_enqueue_style('theme-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
       
-        // buildnutý Tailwind výstup
+        
         wp_enqueue_style('tw-output', get_template_directory_uri() . '/src/output.css', [], filemtime(get_template_directory() . '/src/output.css'));
       });
 
@@ -34,6 +34,7 @@ wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, fals
           'show_in_rest' => true,
         ]);
       });
+
     
       function demo_sample_form_handler() {
         // Fetch the values
@@ -85,7 +86,6 @@ wp_enqueue_script('tailwind-play', 'https://cdn.tailwindcss.com', [], null, fals
   }
   add_action('init', 'register_feedback_cpt');
 
-  // Add custom metabox for feedback answers
 function feedback_add_meta_box() {
   add_meta_box(
       'feedback_answers',
@@ -129,7 +129,7 @@ function feedback_render_meta_box($post) {
 
 add_action('wp_head', function () {
   if (!is_front_page()) return;
-  $poster = get_stylesheet_directory_uri() . '/images/hero-poster.jpg'; // uprav ak máš iný názov/cestu
+  $poster = get_stylesheet_directory_uri() . '/images/hero-poster.jpg'; 
   echo '<link rel="preload" as="image" href="' . esc_url($poster) . '">';
 }, 1);
 
@@ -209,4 +209,106 @@ function mytheme_setup() {
 }
 add_action("after_setup_theme", "mytheme_setup");
 
+add_shortcode('review_form', function () {
+  // If not logged in, show register/login links only
+  if ( ! is_user_logged_in() ) {
+    $login_url    = esc_url( wp_login_url( get_permalink() ) );
+    $register_url = function_exists('wp_registration_url') ? esc_url( wp_registration_url() ) : esc_url( $login_url . '?action=register' );
+    ob_start(); ?>
+    <div class="p-[24px]">
+      <p class="text-[18px] text-black font-['Poppins'] bg-[#D9D9D9]/60 p-6  text-center">
+  You need to be logged in to share your testimonial. <br>
+  <strong>
+    <a class="underline text-[#4F44C6] font-bold" href="<?php echo $login_url; ?>">Log in</a>
+  </strong>
+  or
+  <strong>
+    <a class="underline text-[#4F44C6] font-bold" href="<?php echo $register_url; ?>">Create an account</a>
+  </strong>
+  to get started.
+</p>
+</div>
+
+    <?php return ob_get_clean();
+  }
+
+  // Show the form
+  ob_start(); ?>
+  <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post"
+  class="max-w-[800px] mx-auto grid gap-5 p-6"
+  novalidate>
+  
+  <?php wp_nonce_field('create_review', 'create_review_nonce'); ?>
+  <input type="hidden" name="action" value="create_review">
+
+  <label class="block">
+    <span class="block mb-2 text-[18px] font-semibold text-black font-['Poppins']">Title</span>
+    <input
+      type="text"
+      name="review_title"
+      required
+      maxlength="120"
+      class="w-full border border-gray-300 px-3 py-1.5 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+    >
+  </label>
+
+  <label class="block">
+    <span class="block mb-2 text-[18px] font-semibold text-black font-['Poppins']">Your testimonial</span>
+    <textarea
+      name="review_content"
+      rows="4"
+      required
+      class="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-black resize-none"
+    ></textarea>
+  </label>
+
+  <div class="flex justify-center">
+    <button
+      type="submit"
+      class="w-1/3 min-w-[120px] px-3 py-2 font-size-[16px] bg-black text-white text-sm font-medium font-['Poppins'] hover:bg-gray-800 transition"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+
+  <?php return ob_get_clean();
+});
+
+/** Minimal handler */
+add_action('admin_post_create_review',     'tiny_handle_create_review');
+add_action('admin_post_nopriv_create_review', 'tiny_handle_create_review');
+
+function tiny_handle_create_review() {
+  // Block guest submissions hard
+  if ( ! is_user_logged_in() ) {
+    wp_die('You must be logged in to submit a testimonial.', 'Not allowed', ['response' => 403]);
+  }
+
+  // CSRF check
+  if ( empty($_POST['create_review_nonce']) || ! wp_verify_nonce($_POST['create_review_nonce'], 'create_review') ) {
+    wp_die('Invalid request. Please try again.', 'Bad request', ['response' => 400]);
+  }
+
+  // XSS-safe sanitizing (no HTML allowed = simplest & safest)
+  $title   = isset($_POST['review_title'])   ? sanitize_text_field( wp_unslash($_POST['review_title']) )   : '';
+  $content = isset($_POST['review_content']) ? sanitize_textarea_field( wp_unslash($_POST['review_content']) ) : '';
+
+  if ( $title === '' || $content === '' ) {
+    wp_safe_redirect( add_query_arg('review_status','error', wp_get_referer() ?: home_url('/') ) );
+    exit;
+  }
+
+  // Insert as pending for moderation
+  $ok = wp_insert_post([
+    'post_type'   => 'review',
+    'post_status' => 'pending',
+    'post_title'  => $title,
+    'post_content'=> $content,
+    'post_author' => get_current_user_id(),
+  ]);
+
+  wp_safe_redirect( add_query_arg('review_status', is_wp_error($ok) ? 'error' : 'success', wp_get_referer() ?: home_url('/') ) );
+  exit;
+}
   ?>

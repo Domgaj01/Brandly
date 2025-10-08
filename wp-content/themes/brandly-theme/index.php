@@ -144,7 +144,7 @@ $cta_url     = get_field('help_us_cta_url');
 $formHeading = get_field('form_title');
 ?>
 
-<section  role="region" class="bg-[#D9D9D9]"aria-labelledby="about-heading" aria-describedby="about-text about-cta" >
+<section  role="region" class="bg-[#D9D9D9]/60"aria-labelledby="about-heading" aria-describedby="about-text about-cta" >
   <div class="mx-auto w-full max-w-[1440px]
               px-4 sm:px-6 py-10 lg:py-14 xl:py-16
               gap-y-8 lg:grid lg:grid-cols-12 lg:gap-x-[45px] items-center">
@@ -214,7 +214,7 @@ $all_in_one     = get_field('all_in_one');
     <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-start">
       <li>
         <a href="#"
-           class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
+           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
            aria-label="<?php echo pll__('Learn more about Social Media bundle'); ?>">
           <img src="<?php echo esc_url($social_media['url']); ?>"
                alt="<?php echo $social_media['alt']; ?>"
@@ -226,7 +226,7 @@ $all_in_one     = get_field('all_in_one');
       </li>
       <li>
         <a href="#"
-           class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
+           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
            aria-label="<?php echo pll__('Learn more about SEO bundle'); ?>">
           <img src="<?php echo esc_url($seo['url']); ?>"
                alt="<?php echo $seo['alt']; ?>"
@@ -238,7 +238,7 @@ $all_in_one     = get_field('all_in_one');
       </li>
       <li>
         <a href="#"
-           class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
+           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
            aria-label="<?php echo pll__('Learn more about Rebranding bundle'); ?>">
           <img src="<?php echo esc_url($re_branding['url']); ?>"
                alt="<?php echo $re_branding['alt']; ?>"
@@ -250,7 +250,7 @@ $all_in_one     = get_field('all_in_one');
       </li>
       <li>
         <a href="#"
-           class="group block relative overflow-hidden bg-white shadow-md transition-all hover:-translate-y-1 hover:shadow-2xl"
+           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
            aria-label="<?php echo pll__('Learn more about All-in-One bundle'); ?>">
           <img src="<?php echo esc_url($all_in_one['url']); ?>"
                alt="<?php echo $all_in_one['alt']; ?>"
@@ -306,6 +306,9 @@ if ( $rev->have_posts() ) : ?>
   </div>
 </section>
 <?php endif; ?>
+<section>
+<?php echo do_shortcode('[review_form]'); ?>
+</section>
 <?php endif; ?>
 </main>
 <?php get_footer(); ?>

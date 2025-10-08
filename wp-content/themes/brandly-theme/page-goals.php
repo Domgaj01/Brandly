@@ -6,7 +6,7 @@ $text    = get_field('help_us_text');
 $image   = get_field('help_us_image'); 
 ?>
 
-<section class="bg-[#D9D9D9]" role="region" aria-labelledby="about-heading" aria-describedby="about-text">
+<section class="bg-[#D9D9D9]/60" role="region" aria-labelledby="about-heading" aria-describedby="about-text">
   <div class="mx-auto w-full max-w-[1440px]
               px-4 sm:px-6 py-10 lg:py-14 xl:py-16
               gap-y-8 lg:grid lg:grid-cols-12 lg:gap-x-[45px] items-center">
