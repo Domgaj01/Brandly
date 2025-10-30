@@ -1,0 +1,560 @@
+0000.001 (0) Opened log file at time: Tue, 28 Oct 2025 09:13:09 +0000 on https://brandlyelidominik.local
+0000.059 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.7 WP: 6.8.2 PHP: 8.2.27 (fpm-fcgi, Darwin Laptop-uzivatela-Dominik.local 23.3.0 Darwin Kernel Version 23.3.0: Thu Dec 21 02:29:41 PST 2023; root:xnu-10002.81.5~11/RELEASE_ARM64_T8122 arm64) MySQL: 8.0.43-34 (max packet size=104857600) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 5.5M | 8M) multisite: N openssl: OpenSSL 3.4.1 11 Feb 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.074 (0) Free space on disk containing Updraft's temporary directory: 232710.4 MB
+0000.119 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.134 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.201 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1759910038, seconds_ago=1732752)
+0000.259 (0) Set semaphore last lock (fd) time to 2025-10-28 09:13:10
+0000.274 (0) Semaphore lock (fd) complete
+0000.348 (0) Backup run: resumption=0, nonce=5c9077239075, file_nonce=5c9077239075 begun at=1761642789 (1s ago), job type=backup
+0000.377 (0) Scheduling a resumption (1) after 300 seconds (1761643090) in case this run gets aborted
+0000.431 (0) Checking if we have a zip executable available
+0000.445 (0) Testing: /usr/bin/zip
+0000.473 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.489 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.503 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.517 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.531 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.560 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.575 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.602 (0) Working binary zip found: /usr/bin/zip
+0000.630 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.645 (0) Creation of backups of directories: beginning
+0000.692 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.854 (0) Total entities for the zip file: 661 directories, 4120 files (0 skipped as non-modified), 69.7 MB
+0000.869 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.883 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.898 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.913 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.927 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.942 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0000.957 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0000.972 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0000.987 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 900 files added (on-disk size: 0 KB)
+0001.003 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0001.016 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (7.2 MB, 4120 files batched, 1001 (1001) added so far); re-opening (prior size: 0 KB)
+0001.255 (0) backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: size is now: 3.50 MB
+0001.286 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1100 files added (on-disk size: 3584.2 KB)
+0001.301 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1200 files added (on-disk size: 3584.2 KB)
+0001.316 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1300 files added (on-disk size: 3584.2 KB)
+0001.331 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1400 files added (on-disk size: 3584.2 KB)
+0001.349 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1500 files added (on-disk size: 3584.2 KB)
+0001.365 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1600 files added (on-disk size: 3584.2 KB)
+0001.381 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1700 files added (on-disk size: 3584.2 KB)
+0001.397 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1800 files added (on-disk size: 3584.2 KB)
+0001.416 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 1900 files added (on-disk size: 3584.2 KB)
+0001.435 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2000 files added (on-disk size: 3584.2 KB)
+0001.451 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (12.8 MB, 4120 files batched, 1001 (2002) added so far); re-opening (prior size: 3584.2 KB)
+0001.783 (0) backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: size is now: 7.90 MB
+0001.827 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2100 files added (on-disk size: 8063.1 KB)
+0001.851 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2200 files added (on-disk size: 8063.1 KB)
+0001.871 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2300 files added (on-disk size: 8063.1 KB)
+0001.887 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2400 files added (on-disk size: 8063.1 KB)
+0001.902 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2500 files added (on-disk size: 8063.1 KB)
+0001.918 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2600 files added (on-disk size: 8063.1 KB)
+0001.933 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2700 files added (on-disk size: 8063.1 KB)
+0001.949 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2800 files added (on-disk size: 8063.1 KB)
+0001.965 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 2900 files added (on-disk size: 8063.1 KB)
+0001.983 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3000 files added (on-disk size: 8063.1 KB)
+0001.998 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (21.5 MB, 4120 files batched, 1001 (3003) added so far); re-opening (prior size: 8063.1 KB)
+0002.571 (0) backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: size is now: 13.60 MB
+0002.601 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3100 files added (on-disk size: 13973 KB)
+0002.616 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3200 files added (on-disk size: 13973 KB)
+0002.630 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3300 files added (on-disk size: 13973 KB)
+0002.645 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3400 files added (on-disk size: 13973 KB)
+0002.661 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3500 files added (on-disk size: 13973 KB)
+0002.676 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3600 files added (on-disk size: 13973 KB)
+0002.691 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3700 files added (on-disk size: 13973 KB)
+0002.706 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3800 files added (on-disk size: 13973 KB)
+0002.722 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 3900 files added (on-disk size: 13973 KB)
+0002.738 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 4000 files added (on-disk size: 13973 KB)
+0002.752 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (24.8 MB, 4120 files batched, 1001 (4004) added so far); re-opening (prior size: 13973 KB)
+0003.284 (0) backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: size is now: 21.20 MB
+0003.315 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.tmp: 4100 files added (on-disk size: 21710 KB)
+0003.471 (0) Creating zip file manifest (backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.list-temp.tmp)
+0003.491 (0) Successfully created zip file manifest (size: 333668)
+0003.693 (0) Created plugins zip (0) - 23116.3 KB in 3 s (7798.1 KB/s) (sha1: 6295f02c0712ea36d9f91a8b861931cbb442ce36, sha256: c8ef3858bc747e6a1d09e57009d3f3c4c3fbffb1be3101bf86f758faad6575b7)
+0003.790 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0003.804 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-15b0145a54cec0d1dff6748b1e236f35)
+0005.768 (0) Google Drive: quota usage: used=5785.2 MB, total=15360 MB, available=9574.8 MB
+0005.782 (0) Google Drive: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip: Attempting to upload to Google Drive (into folder id: 1E9AOVTiMtMxULrs-0h9_tj5DpdV08O8H)
+0006.777 (0) Googledrive chunked upload: 4.4 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 7 / 14)
+0007.264 (0) Googledrive chunked upload: 13.3 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 7 / 14)
+0008.321 (0) Googledrive chunked upload: 31 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 7 / 14)
+0009.314 (0) Googledrive chunked upload: 66.4 % uploaded (15728640 - increasing chunk size to 16384 KB - memory usage: 7 / 14)
+0012.161 (0) Googledrive chunked upload: 100 % uploaded (15728640)
+0012.205 (0) Google Drive: OK: Archive backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip uploaded in 6.41 seconds
+0012.232 (0) Recording as successfully uploaded: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip
+0012.264 (0) Deleting local file: backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip: OK
+0012.325 (0) Beginning creation of dump of themes (split every: 400 MB)
+0012.383 (0) Total entities for the zip file: 52 directories, 407 files (0 skipped as non-modified), 17.4 MB
+0012.399 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0012.414 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0012.430 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0012.446 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0012.745 (0) backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.tmp: size is now: 16.40 MB
+0012.775 (0) Creating zip file manifest (backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.list-temp.tmp)
+0012.792 (0) Successfully created zip file manifest (size: 28604)
+0012.957 (0) Created themes zip (0) - 16794 KB in 0.6 s (27876 KB/s) (sha1: d3993d379ba0185d8a9fe6bedff68d59829edab8, sha256: 0721fdf7b721e94e4fb014d834a096a80db91b97067a3ce2c6363e6dc89aa6cf)
+0013.009 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0013.022 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-15b0145a54cec0d1dff6748b1e236f35)
+0013.635 (0) Google Drive: quota usage: used=5807.8 MB, total=15360 MB, available=9552.2 MB
+0013.649 (0) Google Drive: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip: Attempting to upload to Google Drive (into folder id: 1E9AOVTiMtMxULrs-0h9_tj5DpdV08O8H)
+0014.678 (0) Googledrive chunked upload: 6.1 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 6.3 / 14)
+0015.149 (0) Googledrive chunked upload: 18.3 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 6.3 / 14)
+0016.196 (0) Googledrive chunked upload: 42.7 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 6.3 / 14)
+0017.335 (0) Googledrive chunked upload: 91.5 % uploaded (15728640 - increasing chunk size to 16384 KB - memory usage: 6.3 / 14)
+0018.956 (0) Googledrive chunked upload: 100 % uploaded (15728640)
+0019.003 (0) Google Drive: OK: Archive backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip uploaded in 5.34 seconds
+0019.031 (0) Recording as successfully uploaded: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip
+0019.062 (0) Deleting local file: backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip: OK
+0019.106 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots,wp-staging
+0019.121 (0) Looking for candidates to backup in: /Users/dominikgajdos/Local Sites/brandlyelidominik/app/public/wp-content/uploads
+0019.137 (0) finding files: 2025: adding to list (1)
+0019.152 (0) finding files: ithemes-security: adding to list (2)
+0019.167 (0) finding files: rank-math: adding to list (3)
+0019.182 (0) finding files: ao_ccss: adding to list (4)
+0019.196 (0) finding files: wpdiscuz: adding to list (5)
+0019.210 (0) finding files: ultimatemember: adding to list (6)
+0019.223 (0) finding files: ShortpixelBackups: adding to list (7)
+0019.238 (0) finding files: graphcomment: adding to list (8)
+0019.252 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0019.297 (0) Total entities for the zip file: 13 directories, 109 files (0 skipped as non-modified), 8.9 MB
+0019.314 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0019.416 (0) backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip.tmp: size is now: 8.90 MB
+0019.445 (0) Creating zip file manifest (backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip.list-temp.tmp)
+0019.460 (0) Successfully created zip file manifest (size: 8282)
+0019.581 (0) Created uploads zip (0) - 9146.7 KB in 0.3 s (30498.4 KB/s) (sha1: 3a2691bd87e4c69102276f2281d5acbc6761df51, sha256: e90781abaada27a8b55e82a2371b06205111c4f0090173c3c45834f39285ae83)
+0019.625 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0019.640 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-15b0145a54cec0d1dff6748b1e236f35)
+0020.146 (0) Google Drive: quota usage: used=5807.8 MB, total=15360 MB, available=9552.2 MB
+0020.160 (0) Google Drive: backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip: Attempting to upload to Google Drive (into folder id: 1E9AOVTiMtMxULrs-0h9_tj5DpdV08O8H)
+0021.214 (0) Googledrive chunked upload: 11.2 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 6.3 / 14)
+0021.773 (0) Googledrive chunked upload: 33.6 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 6.3 / 14)
+0022.832 (0) Googledrive chunked upload: 78.4 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 6.3 / 14)
+0024.398 (0) Googledrive chunked upload: 100 % uploaded (7340032)
+0024.441 (0) Google Drive: OK: Archive backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip uploaded in 4.27 seconds
+0024.468 (0) Recording as successfully uploaded: backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip
+0024.498 (0) Deleting local file: backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip: OK
+0024.543 (0) Beginning creation of dump of mu-plugins (split every: 400 MB)
+0024.557 (0) Does not exist: /Users/dominikgajdos/Local Sites/brandlyelidominik/app/public/wp-content/mu-plugins
+0024.572 (0) There are no mu-plugins to backup. Will not raise an error.
+0024.586 (0) mu-plugins: create_zip returned an error
+0024.615 (0) Beginning backup of other directories found in the content directory (index: 0)
+0024.629 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0024.644 (0) Looking for candidates to backup in: /Users/dominikgajdos/Local Sites/brandlyelidominik/app/public/wp-content
+0024.659 (0) finding files: upgrade: skipping: excluded by options
+0024.673 (0) finding files: index.php: adding to list (1)
+0024.687 (0) finding files: cache: skipping: excluded by options
+0024.702 (0) finding files: wflogs: adding to list (2)
+0024.716 (0) finding files: plugins: skipping: this is the plugins directory
+0024.730 (0) finding files: uploads: skipping: this is the uploads directory
+0024.745 (0) finding files: updraft: skipping: this is the updraft directory
+0024.760 (0) finding files: autoptimize_404_handler.php: adding to list (3)
+0024.774 (0) finding files: advanced-cache.php: adding to list (4)
+0024.789 (0) finding files: languages: adding to list (5)
+0024.803 (0) finding files: wp-cache-config.php: adding to list (6)
+0024.822 (0) finding files: themes: skipping: this is the themes directory
+0024.837 (0) finding files: jetpack-waf: adding to list (7)
+0024.879 (0) Total entities for the zip file: 5 directories, 160 files (0 skipped as non-modified), 16.4 MB
+0024.896 (0) Zip: backup_2025-10-28-0913_Brandly_5c9077239075-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0025.545 (0) backup_2025-10-28-0913_Brandly_5c9077239075-others.zip.tmp: size is now: 6.50 MB
+0025.575 (0) Creating zip file manifest (backup_2025-10-28-0913_Brandly_5c9077239075-others.zip.list-temp.tmp)
+0025.590 (0) Successfully created zip file manifest (size: 9111)
+0025.693 (0) Created others zip (0) - 6640.3 KB in 0.8 s (8031.7 KB/s) (sha1: 1c54945f476c30ad8679f0dbe1590a27d547cc2c, sha256: e4413a6a961148ba137e40f57ce2f03cea6a7705019082cb1a985410e9381f4a)
+0025.736 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0025.750 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-15b0145a54cec0d1dff6748b1e236f35)
+0026.185 (0) Google Drive: quota usage: used=5833.1 MB, total=15360 MB, available=9526.9 MB
+0026.200 (0) Google Drive: backup_2025-10-28-0913_Brandly_5c9077239075-others.zip: Attempting to upload to Google Drive (into folder id: 1E9AOVTiMtMxULrs-0h9_tj5DpdV08O8H)
+0027.258 (0) Googledrive chunked upload: 15.4 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 6.3 / 14)
+0027.755 (0) Googledrive chunked upload: 46.3 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 6.3 / 14)
+0029.458 (0) Googledrive chunked upload: 100 % uploaded (3145728)
+0029.503 (0) Google Drive: OK: Archive backup_2025-10-28-0913_Brandly_5c9077239075-others.zip uploaded in 3.29 seconds
+0029.531 (0) Recording as successfully uploaded: backup_2025-10-28-0913_Brandly_5c9077239075-others.zip
+0029.560 (0) Deleting local file: backup_2025-10-28-0913_Brandly_5c9077239075-others.zip: OK
+0029.635 (0) Saving backup status to database (elements: 8)
+0029.696 (0) Beginning creation of database dump (WordPress DB)
+0029.737 (0) SQL compatibility mode is: NO_ENGINE_SUBSTITUTION
+0029.913 (0) Table wpbrand_options: Total expected rows (via COUNT): 484
+0029.928 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.152 (0) Table wpbrand_options: Rows added in this batch (next record: 4889): 480 (uncompressed bytes in this segment=1577676) in 0.31 seconds
+0030.209 (0) Table wpbrand_options: finishing file(s) (2, 317.8 KB)
+0030.295 (0) Table wpbrand_users: Total expected rows (via COUNT): 3
+0030.310 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.367 (0) Table wpbrand_users: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=1927) in 0.11 seconds
+0030.414 (0) Table wpbrand_users: finishing file(s) (2, 0.9 KB)
+0030.529 (0) Table wpbrand_usermeta: Total expected rows (via COUNT): 106
+0030.543 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.602 (0) Table wpbrand_usermeta: Rows added in this batch (next record: 131): 106 (uncompressed bytes in this segment=8369) in 0.14 seconds
+0030.664 (0) Table wpbrand_usermeta: finishing file(s) (2, 3.1 KB)
+0030.779 (0) Table wpbrand_actionscheduler_actions: Total expected rows (via COUNT): 19
+0030.794 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0030.853 (0) Table wpbrand_actionscheduler_actions: Rows added in this batch (next record: 231): 19 (uncompressed bytes in this segment=9024) in 0.14 seconds
+0030.916 (0) Table wpbrand_actionscheduler_actions: finishing file(s) (2, 1.5 KB)
+0031.008 (0) Table wpbrand_actionscheduler_claims: Total expected rows (via COUNT): 0
+0031.051 (0) Table wpbrand_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=652) in 0.09 seconds
+0031.098 (0) Table wpbrand_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0031.185 (0) Table wpbrand_actionscheduler_groups: Total expected rows (via COUNT): 3
+0031.200 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.257 (0) Table wpbrand_actionscheduler_groups: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=770) in 0.11 seconds
+0031.304 (0) Table wpbrand_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0031.388 (0) Table wpbrand_actionscheduler_logs: Total expected rows (via COUNT): 55
+0031.403 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.460 (0) Table wpbrand_actionscheduler_logs: Rows added in this batch (next record: 84): 55 (uncompressed bytes in this segment=5553) in 0.11 seconds
+0031.507 (0) Table wpbrand_actionscheduler_logs: finishing file(s) (2, 1.1 KB)
+0031.623 (0) Table wpbrand_commentmeta: Total expected rows (via COUNT): 0
+0031.667 (0) Table wpbrand_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=707) in 0.12 seconds
+0031.728 (0) Table wpbrand_commentmeta: finishing file(s) (2, 0.4 KB)
+0031.814 (0) Table wpbrand_comments: Total expected rows (via COUNT): 1
+0031.828 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0031.884 (0) Table wpbrand_comments: Rows added in this batch (next record: 2): 1 (uncompressed bytes in this segment=2068) in 0.11 seconds
+0031.931 (0) Table wpbrand_comments: finishing file(s) (2, 0.7 KB)
+0032.018 (0) Table wpbrand_links: Total expected rows (via COUNT): 0
+0032.061 (0) Table wpbrand_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1328) in 0.09 seconds
+0032.108 (0) Table wpbrand_links: finishing file(s) (2, 0.5 KB)
+0032.225 (0) Table wpbrand_postmeta: Total expected rows (via COUNT): 4620
+0032.427 (0) Table wpbrand_postmeta: Rows added in this batch (next record: 5241): 4620 (uncompressed bytes in this segment=308123) in 0.28 seconds
+0032.489 (0) Table wpbrand_postmeta: finishing file(s) (2, 46 KB)
+0032.607 (0) Table wpbrand_posts: Total expected rows (via COUNT): 248
+0032.622 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0032.731 (0) Table wpbrand_posts: Rows added in this batch (next record: 347): 248 (uncompressed bytes in this segment=373813) in 0.20 seconds
+0032.791 (0) Table wpbrand_posts: finishing file(s) (2, 77.1 KB)
+0032.862 (0) Table wpbrand_term_relationships: Total expected rows (approximate): 62
+0032.933 (0) Table wpbrand_term_relationships: Rows added in this batch (next record: 100000): 165 (uncompressed bytes in this segment=3024) in 0.10 seconds
+0032.979 (0) Table wpbrand_term_relationships: finishing file(s) (2, 0.9 KB)
+0033.110 (0) Table wpbrand_term_taxonomy: Total expected rows (via COUNT): 80
+0033.127 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0033.187 (0) Table wpbrand_term_taxonomy: Rows added in this batch (next record: 88): 80 (uncompressed bytes in this segment=5129) in 0.16 seconds
+0033.255 (0) Table wpbrand_term_taxonomy: finishing file(s) (2, 1.3 KB)
+0033.371 (0) Table wpbrand_termmeta: Total expected rows (via COUNT): 2
+0033.386 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0033.442 (0) Table wpbrand_termmeta: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=4317) in 0.14 seconds
+0033.509 (0) Table wpbrand_termmeta: finishing file(s) (2, 1.6 KB)
+0033.599 (0) Table wpbrand_terms: Total expected rows (via COUNT): 80
+0033.613 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0033.670 (0) Table wpbrand_terms: Rows added in this batch (next record: 88): 80 (uncompressed bytes in this segment=4256) in 0.12 seconds
+0033.721 (0) Table wpbrand_terms: finishing file(s) (2, 1.3 KB)
+0033.735 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_commentmeta
+0033.750 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_comments
+0033.764 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_links
+0033.779 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_options
+0033.793 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_postmeta
+0033.808 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_posts
+0033.823 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_term_relationships
+0033.838 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_term_taxonomy
+0033.853 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_termmeta
+0033.867 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_terms
+0033.882 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_usermeta
+0033.896 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_users
+0033.910 (0) Skipping table (lacks our prefix (wpbrand_)): clk2c71515fdb_wppusher_packages
+0033.924 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_commentmeta
+0033.939 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_comments
+0033.954 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_links
+0033.968 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_options
+0033.982 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_postmeta
+0033.996 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_posts
+0034.011 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_term_relationships
+0034.025 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_term_taxonomy
+0034.039 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_termmeta
+0034.055 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_terms
+0034.080 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_usermeta
+0034.095 (0) Skipping table (lacks our prefix (wpbrand_)): clk49b3b30eb5_users
+0034.109 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_commentmeta
+0034.124 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_comments
+0034.138 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_links
+0034.152 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_options
+0034.166 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_postmeta
+0034.181 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_posts
+0034.197 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_term_relationships
+0034.211 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_term_taxonomy
+0034.226 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_termmeta
+0034.240 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_terms
+0034.255 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_usermeta
+0034.269 (0) Skipping table (lacks our prefix (wpbrand_)): clk83ff8a6c93_users
+0034.283 (0) Skipping table (lacks our prefix (wpbrand_)): wp_commentmeta
+0034.298 (0) Skipping table (lacks our prefix (wpbrand_)): wp_comments
+0034.313 (0) Skipping table (lacks our prefix (wpbrand_)): wp_links
+0034.328 (0) Skipping table (lacks our prefix (wpbrand_)): wp_options
+0034.343 (0) Skipping table (lacks our prefix (wpbrand_)): wp_postmeta
+0034.357 (0) Skipping table (lacks our prefix (wpbrand_)): wp_posts
+0034.372 (0) Skipping table (lacks our prefix (wpbrand_)): wp_term_relationships
+0034.386 (0) Skipping table (lacks our prefix (wpbrand_)): wp_term_taxonomy
+0034.400 (0) Skipping table (lacks our prefix (wpbrand_)): wp_termmeta
+0034.415 (0) Skipping table (lacks our prefix (wpbrand_)): wp_terms
+0034.430 (0) Skipping table (lacks our prefix (wpbrand_)): wp_usermeta
+0034.445 (0) Skipping table (lacks our prefix (wpbrand_)): wp_users
+0034.547 (0) Table wpbrand_graphcomment_comment_pairing: Total expected rows (via COUNT): 0
+0034.589 (0) Table wpbrand_graphcomment_comment_pairing: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=758) in 0.10 seconds
+0034.635 (0) Table wpbrand_graphcomment_comment_pairing: finishing file(s) (2, 0.4 KB)
+0034.741 (0) Table wpbrand_mo2f_network_transactions: Total expected rows (via COUNT): 0
+0034.769 (0) Table wpbrand_mo2f_network_transactions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=694) in 0.09 seconds
+0034.815 (0) Table wpbrand_mo2f_network_transactions: finishing file(s) (2, 0.3 KB)
+0034.889 (0) Table wpbrand_mo2f_user_login_info: Total expected rows (approximate): 11
+0034.933 (0) Table wpbrand_mo2f_user_login_info: Rows added in this batch (next record: 1000): 11 (uncompressed bytes in this segment=1843) in 0.07 seconds
+0034.980 (0) Table wpbrand_mo2f_user_login_info: finishing file(s) (2, 0.6 KB)
+0035.081 (0) Table wpbrand_moppm_user_report_table: Total expected rows (via COUNT): 0
+0035.111 (0) Table wpbrand_moppm_user_report_table: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=569) in 0.09 seconds
+0035.157 (0) Table wpbrand_moppm_user_report_table: finishing file(s) (2, 0.3 KB)
+0035.243 (0) Table wpbrand_rank_math_internal_links: Total expected rows (via COUNT): 48
+0035.258 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0035.315 (0) Table wpbrand_rank_math_internal_links: Rows added in this batch (next record: 124): 48 (uncompressed bytes in this segment=4503) in 0.11 seconds
+0035.362 (0) Table wpbrand_rank_math_internal_links: finishing file(s) (2, 1.1 KB)
+0035.449 (0) Table wpbrand_rank_math_internal_meta: Total expected rows (via COUNT): 32
+0035.463 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0035.505 (0) Table wpbrand_rank_math_internal_meta: Rows added in this batch (next record: 347): 32 (uncompressed bytes in this segment=1244) in 0.10 seconds
+0035.557 (0) Table wpbrand_rank_math_internal_meta: finishing file(s) (2, 0.5 KB)
+0035.648 (0) Table wpbrand_shortpixel_aipostmeta: Total expected rows (via COUNT): 0
+0035.692 (0) Table wpbrand_shortpixel_aipostmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=914) in 0.09 seconds
+0035.738 (0) Table wpbrand_shortpixel_aipostmeta: finishing file(s) (2, 0.4 KB)
+0035.839 (0) Table wpbrand_shortpixel_folders: Total expected rows (via COUNT): 0
+0035.882 (0) Table wpbrand_shortpixel_folders: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=946) in 0.10 seconds
+0035.929 (0) Table wpbrand_shortpixel_folders: finishing file(s) (2, 0.4 KB)
+0036.062 (0) Table wpbrand_shortpixel_meta: Total expected rows (via COUNT): 0
+0036.105 (0) Table wpbrand_shortpixel_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1358) in 0.13 seconds
+0036.166 (0) Table wpbrand_shortpixel_meta: finishing file(s) (2, 0.5 KB)
+0036.283 (0) Table wpbrand_shortpixel_postmeta: Total expected rows (via COUNT): 4
+0036.297 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0036.354 (0) Table wpbrand_shortpixel_postmeta: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=2115) in 0.14 seconds
+0036.414 (0) Table wpbrand_shortpixel_postmeta: finishing file(s) (2, 0.8 KB)
+0036.531 (0) Table wpbrand_um_metadata: Total expected rows (via COUNT): 0
+0036.574 (0) Table wpbrand_um_metadata: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=742) in 0.12 seconds
+0036.635 (0) Table wpbrand_um_metadata: finishing file(s) (2, 0.4 KB)
+0036.723 (0) Table wpbrand_wfauditevents: Total expected rows (via COUNT): 0
+0036.752 (0) Table wpbrand_wfauditevents: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=730) in 0.07 seconds
+0036.799 (0) Table wpbrand_wfauditevents: finishing file(s) (2, 0.4 KB)
+0036.880 (0) Table wpbrand_wfblockediplog: Total expected rows (approximate): 0
+0036.910 (0) Table wpbrand_wfblockediplog: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=654) in 0.06 seconds
+0036.960 (0) Table wpbrand_wfblockediplog: finishing file(s) (2, 0.4 KB)
+0037.048 (0) Table wpbrand_wfblocks7: Total expected rows (via COUNT): 0
+0037.078 (0) Table wpbrand_wfblocks7: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=820) in 0.07 seconds
+0037.126 (0) Table wpbrand_wfblocks7: finishing file(s) (2, 0.4 KB)
+0037.199 (0) Table wpbrand_wfconfig: Total expected rows (approximate): 216
+0037.245 (0) Table wpbrand_wfconfig: Rows added in this batch (next record: 1000): 232 (uncompressed bytes in this segment=22099) in 0.07 seconds
+0037.292 (0) Table wpbrand_wfconfig: finishing file(s) (2, 5 KB)
+0037.365 (0) Table wpbrand_wfcrawlers: Total expected rows (approximate): 0
+0037.394 (0) Table wpbrand_wfcrawlers: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=581) in 0.06 seconds
+0037.440 (0) Table wpbrand_wfcrawlers: finishing file(s) (2, 0.3 KB)
+0037.513 (0) Table wpbrand_wffilechanges: Total expected rows (approximate): 0
+0037.544 (0) Table wpbrand_wffilechanges: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=485) in 0.06 seconds
+0037.590 (0) Table wpbrand_wffilechanges: finishing file(s) (2, 0.3 KB)
+0037.663 (0) Table wpbrand_wffilemods: Total expected rows (approximate): 0
+0037.694 (0) Table wpbrand_wffilemods: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=888) in 0.06 seconds
+0037.747 (0) Table wpbrand_wffilemods: finishing file(s) (2, 0.4 KB)
+0037.835 (0) Table wpbrand_wfhits: Total expected rows (via COUNT): 0
+0037.865 (0) Table wpbrand_wfhits: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=913) in 0.07 seconds
+0037.911 (0) Table wpbrand_wfhits: finishing file(s) (2, 0.5 KB)
+0038.001 (0) Table wpbrand_wfhoover: Total expected rows (via COUNT): 0
+0038.031 (0) Table wpbrand_wfhoover: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=505) in 0.07 seconds
+0038.078 (0) Table wpbrand_wfhoover: finishing file(s) (2, 0.3 KB)
+0038.168 (0) Table wpbrand_wfissues: Total expected rows (via COUNT): 0
+0038.196 (0) Table wpbrand_wfissues: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=822) in 0.07 seconds
+0038.243 (0) Table wpbrand_wfissues: finishing file(s) (2, 0.4 KB)
+0038.330 (0) Table wpbrand_wfknownfilelist: Total expected rows (via COUNT): 0
+0038.358 (0) Table wpbrand_wfknownfilelist: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=494) in 0.07 seconds
+0038.404 (0) Table wpbrand_wfknownfilelist: finishing file(s) (2, 0.3 KB)
+0038.477 (0) Table wpbrand_wflivetraffichuman: Total expected rows (approximate): 0
+0038.505 (0) Table wpbrand_wflivetraffichuman: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=677) in 0.06 seconds
+0038.552 (0) Table wpbrand_wflivetraffichuman: finishing file(s) (2, 0.3 KB)
+0038.628 (0) Table wpbrand_wflocs: Total expected rows (approximate): 0
+0038.660 (0) Table wpbrand_wflocs: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=708) in 0.06 seconds
+0038.709 (0) Table wpbrand_wflocs: finishing file(s) (2, 0.4 KB)
+0038.797 (0) Table wpbrand_wflogins: Total expected rows (via COUNT): 0
+0038.829 (0) Table wpbrand_wflogins: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=699) in 0.07 seconds
+0038.875 (0) Table wpbrand_wflogins: finishing file(s) (2, 0.4 KB)
+0038.971 (0) Table wpbrand_wfls_2fa_secrets: Total expected rows (via COUNT): 0
+0039.000 (0) Table wpbrand_wfls_2fa_secrets: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=698) in 0.08 seconds
+0039.046 (0) Table wpbrand_wfls_2fa_secrets: finishing file(s) (2, 0.4 KB)
+0039.120 (0) Table wpbrand_wfls_role_counts: Total expected rows (approximate): 0
+0039.150 (0) Table wpbrand_wfls_role_counts: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=576) in 0.06 seconds
+0039.197 (0) Table wpbrand_wfls_role_counts: finishing file(s) (2, 0.3 KB)
+0039.270 (0) Table wpbrand_wfls_settings: Total expected rows (approximate): 26
+0039.314 (0) Table wpbrand_wfls_settings: Rows added in this batch (next record: 1000): 27 (uncompressed bytes in this segment=1965) in 0.07 seconds
+0039.360 (0) Table wpbrand_wfls_settings: finishing file(s) (2, 0.9 KB)
+0039.433 (0) Table wpbrand_wfnotifications: Total expected rows (approximate): 0
+0039.476 (0) Table wpbrand_wfnotifications: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=880) in 0.07 seconds
+0039.525 (0) Table wpbrand_wfnotifications: finishing file(s) (2, 0.5 KB)
+0039.614 (0) Table wpbrand_wfpendingissues: Total expected rows (via COUNT): 0
+0039.644 (0) Table wpbrand_wfpendingissues: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=864) in 0.07 seconds
+0039.691 (0) Table wpbrand_wfpendingissues: finishing file(s) (2, 0.4 KB)
+0039.764 (0) Table wpbrand_wfreversecache: Total expected rows (approximate): 0
+0039.792 (0) Table wpbrand_wfreversecache: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=526) in 0.06 seconds
+0039.839 (0) Table wpbrand_wfreversecache: finishing file(s) (2, 0.3 KB)
+0039.926 (0) Table wpbrand_wfsecurityevents: Total expected rows (via COUNT): 0
+0039.955 (0) Table wpbrand_wfsecurityevents: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=707) in 0.07 seconds
+0040.002 (0) Table wpbrand_wfsecurityevents: finishing file(s) (2, 0.4 KB)
+0040.090 (0) Table wpbrand_wfsnipcache: Total expected rows (via COUNT): 0
+0040.118 (0) Table wpbrand_wfsnipcache: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=722) in 0.07 seconds
+0040.174 (0) Table wpbrand_wfsnipcache: finishing file(s) (2, 0.4 KB)
+0040.262 (0) Table wpbrand_wfstatus: Total expected rows (via COUNT): 0
+0040.293 (0) Table wpbrand_wfstatus: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=578) in 0.07 seconds
+0040.337 (0) Table wpbrand_wfstatus: finishing file(s) (2, 0.4 KB)
+0040.422 (0) Table wpbrand_wftrafficrates: Total expected rows (approximate): 0
+0040.455 (0) Table wpbrand_wftrafficrates: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=591) in 0.07 seconds
+0040.498 (0) Table wpbrand_wftrafficrates: finishing file(s) (2, 0.3 KB)
+0040.591 (0) Table wpbrand_wfwaffailures: Total expected rows (via COUNT): 0
+0040.619 (0) Table wpbrand_wfwaffailures: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=552) in 0.07 seconds
+0040.667 (0) Table wpbrand_wfwaffailures: finishing file(s) (2, 0.3 KB)
+0040.770 (0) Table wpbrand_wpc_accesslocks: Total expected rows (via COUNT): 0
+0040.799 (0) Table wpbrand_wpc_accesslocks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=749) in 0.09 seconds
+0040.848 (0) Table wpbrand_wpc_accesslocks: finishing file(s) (2, 0.4 KB)
+0040.949 (0) Table wpbrand_wpc_login_fails: Total expected rows (via COUNT): 0
+0040.978 (0) Table wpbrand_wpc_login_fails: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=751) in 0.09 seconds
+0041.026 (0) Table wpbrand_wpc_login_fails: finishing file(s) (2, 0.4 KB)
+0041.040 (0) PHP event: code E_WARNING: filemtime(): stat failed for /Users/dominikgajdos/Local Sites/brandlyelidominik/app/public/wp-content/updraft/backup_2025-10-28-0913_Brandly_5c9077239075-db.gz (line 1923, wp-content/plugins/updraftplus/backup.php)
+0041.084 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_options.table.tmpr4890.gz (1/103/fopen): adding to final database dump
+0041.108 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_options.table.gz (2/103/fopen): adding to final database dump
+0041.122 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_users.table.tmpr4.gz (3/103/fopen): adding to final database dump
+0041.136 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_users.table.gz (4/103/fopen): adding to final database dump
+0041.151 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_usermeta.table.tmpr132.gz (5/103/fopen): adding to final database dump
+0041.166 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_usermeta.table.gz (6/103/fopen): adding to final database dump
+0041.180 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_actions.table.tmpr232.gz (7/103/fopen): adding to final database dump
+0041.195 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_actions.table.gz (8/103/fopen): adding to final database dump
+0041.209 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_claims.table.tmpr0.gz (9/103/fopen): adding to final database dump
+0041.224 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_claims.table.gz (10/103/fopen): adding to final database dump
+0041.238 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_groups.table.tmpr4.gz (11/103/fopen): adding to final database dump
+0041.253 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_groups.table.gz (12/103/fopen): adding to final database dump
+0041.267 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_logs.table.tmpr85.gz (13/103/fopen): adding to final database dump
+0041.288 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_actionscheduler_logs.table.gz (14/103/fopen): adding to final database dump
+0041.302 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_commentmeta.table.tmpr0.gz (15/103/fopen): adding to final database dump
+0041.318 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_commentmeta.table.gz (16/103/fopen): adding to final database dump
+0041.332 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_comments.table.tmpr3.gz (17/103/fopen): adding to final database dump
+0041.347 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_comments.table.gz (18/103/fopen): adding to final database dump
+0041.361 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_links.table.tmpr0.gz (19/103/fopen): adding to final database dump
+0041.376 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_links.table.gz (20/103/fopen): adding to final database dump
+0041.390 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_postmeta.table.tmpr5242.gz (21/103/fopen): adding to final database dump
+0041.407 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_postmeta.table.gz (22/103/fopen): adding to final database dump
+0041.421 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_posts.table.tmpr348.gz (23/103/fopen): adding to final database dump
+0041.437 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_posts.table.gz (24/103/fopen): adding to final database dump
+0041.451 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_term_relationships.table.tmpr100001.gz (25/103/fopen): adding to final database dump
+0041.466 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_term_relationships.table.gz (26/103/fopen): adding to final database dump
+0041.481 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_term_taxonomy.table.tmpr89.gz (27/103/fopen): adding to final database dump
+0041.495 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_term_taxonomy.table.gz (28/103/fopen): adding to final database dump
+0041.510 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_termmeta.table.tmpr3.gz (29/103/fopen): adding to final database dump
+0041.524 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_termmeta.table.gz (30/103/fopen): adding to final database dump
+0041.539 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_terms.table.tmpr89.gz (31/103/fopen): adding to final database dump
+0041.554 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_terms.table.gz (32/103/fopen): adding to final database dump
+0041.568 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_graphcomment_comment_pairing.table.tmpr0.gz (33/103/fopen): adding to final database dump
+0041.582 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_graphcomment_comment_pairing.table.gz (34/103/fopen): adding to final database dump
+0041.596 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_mo2f_network_transactions.table.tmpr0.gz (35/103/fopen): adding to final database dump
+0041.611 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_mo2f_network_transactions.table.gz (36/103/fopen): adding to final database dump
+0041.625 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_mo2f_user_login_info.table.tmpr1001.gz (37/103/fopen): adding to final database dump
+0041.640 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_mo2f_user_login_info.table.gz (38/103/fopen): adding to final database dump
+0041.656 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_moppm_user_report_table.table.tmpr0.gz (39/103/fopen): adding to final database dump
+0041.670 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_moppm_user_report_table.table.gz (40/103/fopen): adding to final database dump
+0041.685 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_rank_math_internal_links.table.tmpr125.gz (41/103/fopen): adding to final database dump
+0041.699 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_rank_math_internal_links.table.gz (42/103/fopen): adding to final database dump
+0041.713 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_rank_math_internal_meta.table.tmpr348.gz (43/103/fopen): adding to final database dump
+0041.728 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_rank_math_internal_meta.table.gz (44/103/fopen): adding to final database dump
+0041.742 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_aipostmeta.table.tmpr0.gz (45/103/fopen): adding to final database dump
+0041.757 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_aipostmeta.table.gz (46/103/fopen): adding to final database dump
+0041.771 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_folders.table.tmpr0.gz (47/103/fopen): adding to final database dump
+0041.786 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_folders.table.gz (48/103/fopen): adding to final database dump
+0041.800 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_meta.table.tmpr0.gz (49/103/fopen): adding to final database dump
+0041.815 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_meta.table.gz (50/103/fopen): adding to final database dump
+0041.829 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_postmeta.table.tmpr5.gz (51/103/fopen): adding to final database dump
+0041.844 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_shortpixel_postmeta.table.gz (52/103/fopen): adding to final database dump
+0041.858 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_um_metadata.table.tmpr0.gz (53/103/fopen): adding to final database dump
+0041.873 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_um_metadata.table.gz (54/103/fopen): adding to final database dump
+0041.887 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfauditevents.table.tmpr0.gz (55/103/fopen): adding to final database dump
+0041.903 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfauditevents.table.gz (56/103/fopen): adding to final database dump
+0041.917 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfblockediplog.table.tmpr1.gz (57/103/fopen): adding to final database dump
+0041.932 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfblockediplog.table.gz (58/103/fopen): adding to final database dump
+0041.946 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfblocks7.table.tmpr0.gz (59/103/fopen): adding to final database dump
+0041.961 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfblocks7.table.gz (60/103/fopen): adding to final database dump
+0041.976 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfconfig.table.tmpr1001.gz (61/103/fopen): adding to final database dump
+0041.991 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfconfig.table.gz (62/103/fopen): adding to final database dump
+0042.005 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfcrawlers.table.tmpr1.gz (63/103/fopen): adding to final database dump
+0042.020 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfcrawlers.table.gz (64/103/fopen): adding to final database dump
+0042.034 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wffilechanges.table.tmpr1.gz (65/103/fopen): adding to final database dump
+0042.049 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wffilechanges.table.gz (66/103/fopen): adding to final database dump
+0042.064 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wffilemods.table.tmpr1.gz (67/103/fopen): adding to final database dump
+0042.078 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wffilemods.table.gz (68/103/fopen): adding to final database dump
+0042.093 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfhits.table.tmpr0.gz (69/103/fopen): adding to final database dump
+0042.107 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfhits.table.gz (70/103/fopen): adding to final database dump
+0042.122 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfhoover.table.tmpr0.gz (71/103/fopen): adding to final database dump
+0042.137 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfhoover.table.gz (72/103/fopen): adding to final database dump
+0042.151 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfissues.table.tmpr0.gz (73/103/fopen): adding to final database dump
+0042.170 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfissues.table.gz (74/103/fopen): adding to final database dump
+0042.185 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfknownfilelist.table.tmpr0.gz (75/103/fopen): adding to final database dump
+0042.200 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfknownfilelist.table.gz (76/103/fopen): adding to final database dump
+0042.215 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wflivetraffichuman.table.tmpr1.gz (77/103/fopen): adding to final database dump
+0042.231 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wflivetraffichuman.table.gz (78/103/fopen): adding to final database dump
+0042.247 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wflocs.table.tmpr1.gz (79/103/fopen): adding to final database dump
+0042.261 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wflocs.table.gz (80/103/fopen): adding to final database dump
+0042.275 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wflogins.table.tmpr0.gz (81/103/fopen): adding to final database dump
+0042.288 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wflogins.table.gz (82/103/fopen): adding to final database dump
+0042.303 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfls_2fa_secrets.table.tmpr0.gz (83/103/fopen): adding to final database dump
+0042.317 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfls_2fa_secrets.table.gz (84/103/fopen): adding to final database dump
+0042.331 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfls_role_counts.table.tmpr1.gz (85/103/fopen): adding to final database dump
+0042.346 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfls_role_counts.table.gz (86/103/fopen): adding to final database dump
+0042.361 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfls_settings.table.tmpr1001.gz (87/103/fopen): adding to final database dump
+0042.378 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfls_settings.table.gz (88/103/fopen): adding to final database dump
+0042.404 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfnotifications.table.tmpr1001.gz (89/103/fopen): adding to final database dump
+0042.443 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfnotifications.table.gz (90/103/fopen): adding to final database dump
+0042.486 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfpendingissues.table.tmpr0.gz (91/103/fopen): adding to final database dump
+0042.527 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfpendingissues.table.gz (92/103/fopen): adding to final database dump
+0042.545 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfreversecache.table.tmpr1.gz (93/103/fopen): adding to final database dump
+0042.566 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfreversecache.table.gz (94/103/fopen): adding to final database dump
+0042.587 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfsecurityevents.table.tmpr0.gz (95/103/fopen): adding to final database dump
+0042.615 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfsecurityevents.table.gz (96/103/fopen): adding to final database dump
+0042.645 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfsnipcache.table.tmpr0.gz (97/103/fopen): adding to final database dump
+0042.678 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfsnipcache.table.gz (98/103/fopen): adding to final database dump
+0042.713 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfstatus.table.tmpr0.gz (99/103/fopen): adding to final database dump
+0042.782 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfstatus.table.gz (100/103/fopen): adding to final database dump
+0042.812 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wftrafficrates.table.tmpr1.gz (101/103/fopen): adding to final database dump
+0042.846 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wftrafficrates.table.gz (102/103/fopen): adding to final database dump
+0042.890 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfwaffailures.table.tmpr0.gz (103/103/fopen): adding to final database dump
+0042.913 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wfwaffailures.table.gz (104/103/fopen): adding to final database dump
+0042.936 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wpc_accesslocks.table.tmpr0.gz (105/103/fopen): adding to final database dump
+0042.965 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wpc_accesslocks.table.gz (106/103/fopen): adding to final database dump
+0043.006 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wpc_login_fails.table.tmpr0.gz (107/103/fopen): adding to final database dump
+0043.058 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db-table-wpbrand_wpc_login_fails.table.gz (108/103/fopen): adding to final database dump
+0043.259 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db.gz: finished writing out complete database file (475.8 KB)
+0043.449 (0) Total database tables backed up: 54 (backup_2025-10-28-0913_Brandly_5c9077239075-db.gz, size: 487307, sha1: c8d66b158e738ae43dee6977571f62a5f17ae24a, sha256: 5d8c9e835b6a22c468a2e14ed763c06b918bd4482dac06a2ebf83b1cd5413b01)
+0043.733 (0) backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip: plugins: This file has already been successfully uploaded
+0043.763 (0) backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip: themes: This file has already been successfully uploaded
+0043.794 (0) backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip: uploads: This file has already been successfully uploaded
+0043.819 (0) backup_2025-10-28-0913_Brandly_5c9077239075-others.zip: others: This file has already been successfully uploaded
+0043.850 (0) backup_2025-10-28-0913_Brandly_5c9077239075-db.gz: db: This file has not yet been successfully uploaded: will queue
+0043.888 (0) Saving backup history. Total backup size: 54.9 MB
+0044.113 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0044.354 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0044.438 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-15b0145a54cec0d1dff6748b1e236f35)
+0045.660 (0) Google Drive: quota usage: used=5839.6 MB, total=15360 MB, available=9520.4 MB
+0045.693 (0) Google Drive: backup_2025-10-28-0913_Brandly_5c9077239075-db.gz: Attempting to upload to Google Drive (into folder id: 1E9AOVTiMtMxULrs-0h9_tj5DpdV08O8H)
+0047.951 (0) Googledrive chunked upload: 100 % uploaded
+0048.118 (0) Google Drive: OK: Archive backup_2025-10-28-0913_Brandly_5c9077239075-db.gz uploaded in 2.4 seconds
+0048.216 (0) Recording as successfully uploaded: backup_2025-10-28-0913_Brandly_5c9077239075-db.gz
+0048.312 (0) Deleting local file: backup_2025-10-28-0913_Brandly_5c9077239075-db.gz: OK
+0048.395 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0048.429 (0) Number of backup sets in history: 3; groups (db): 1
+0048.443 (0) Examining (for databases) backup set with group_id=0, nonce=5c9077239075, datestamp=1761642789 (Oct 28 2025 09:13:09)
+0048.458 (0) This backup set is the backup set just made, so will not be deleted.
+0048.458 (0) Examining (for databases) backup set with group_id=0, nonce=f90ccbc5e7c6, datestamp=1759910038 (Oct 08 2025 07:53:58)
+0048.458 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0048.475 (0) Examining (for databases) backup set with group_id=0, nonce=0e967625b87e, datestamp=1759307535 (Oct 01 2025 08:32:15)
+0048.475 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0048.476 (0) Number of backup sets in history: 3; groups (files): 1
+0048.491 (0) Examining (for files) backup set with nonce=5c9077239075, datestamp=1761642789 (Oct 28 2025 09:13:09)
+0048.491 (0) This backup set is the backup set just made, so will not be deleted.
+0048.507 (0) This backup set is the backup set just made, so will not be deleted.
+0048.508 (0) This backup set is the backup set just made, so will not be deleted.
+0048.508 (0) This backup set is the backup set just made, so will not be deleted.
+0048.508 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0048.523 (0) Examining (for files) backup set with nonce=f90ccbc5e7c6, datestamp=1759910038 (Oct 08 2025 07:53:58)
+0048.523 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0048.523 (0) Examining (for files) backup set with nonce=0e967625b87e, datestamp=1759307535 (Oct 01 2025 08:32:15)
+0048.523 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0048.523 (0) Retain: saving new backup history (sets now: 3) and finishing retain operation
+0048.596 (0) Resume backup (5c9077239075, 0): finish run
+0048.663 (0) Decremented the semaphore (fd) by 1
+0048.717 (0) Semaphore (fd) unlocked
+0048.745 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0048.835 (0) Deleting zip manifest (backup_2025-10-28-0913_Brandly_5c9077239075-plugins.zip.list.tmp)
+0048.864 (0) Deleting zip manifest (backup_2025-10-28-0913_Brandly_5c9077239075-themes.zip.list.tmp)
+0048.897 (0) Deleting zip manifest (backup_2025-10-28-0913_Brandly_5c9077239075-uploads.zip.list.tmp)
+0048.938 (0) Deleting zip manifest (backup_2025-10-28-0913_Brandly_5c9077239075-others.zip.list.tmp)
+0048.978 (0) Fetching RSS news feed
+0049.696 (0) Fetched RSS news feed; result is a: SimplePie\SimplePie
+0049.817 (0) Sending email ('Files and database (Full backup)') report (attachments: 0, size: 0 KB) to: domga...
+0049.862 (0) The backup succeeded and is now complete

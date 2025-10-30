@@ -6,7 +6,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white'); ?>>
+<body <?php body_class(); ?>>
   <!-- Sticky Navbar -->
   <header class="sticky top-0 inset-x-0 z-50 bg-white backdrop-blur">
     <div class="mx-auto w-full max-w-[1440px] xl:h-[120px] xl:grid xl:grid-cols-12 xl:gap-x-[45px] items-center
@@ -26,6 +26,7 @@
 <nav class="hidden xl:block xl:col-start-5 xl:col-end-10" aria-label="Main menu">
   <ul class="flex justify-center items-center space-x-[45px] text-gray-800">
     <li><a href="<?php echo home_url('/'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Home') ); ?></a></li>
+    <li><a href="<?php echo home_url('/shop'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Products') ); ?></a></li>
     <li><a href="<?php echo home_url('/goals'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Goals') ); ?></a></li>
     <li><a href="<?php echo home_url('/blogs'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Blogs') ); ?></a></li>
     <li><a href="<?php echo home_url('/help-us'); ?>" class="hover:text-black text-[20px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Help Us') ); ?></a></li>
@@ -33,7 +34,7 @@
 </nav>
 
 <div id="lang-switcher-wrap"
-     class="relative xl:col-start-10 xl:col-end-11 font-[Poppins] min-w-[44px] min-h-[44px] flex items-center justify-center">
+     class="relative xl:col-start-10 xl:col-end-11 font-[Poppins] min-w-[24px] min-h-[24px] flex items-center justify-center px-4">
 
   <!-- Visually hidden label text -->
   <label for="lang-switcher" id="language-switcher-label" class="sr-only">
@@ -83,27 +84,30 @@
 
 
 
-
       <!-- Cart -->
       <div class="flex items-center gap-4 xl:col-start-11 xl:col-end-12">
-        <button aria-label="Cart" class="p-1">
-          <span class="iconify text-[28px] xl:text-[40px] text-gray-800" data-icon="mdi:cart-outline"></span>
-        </button>
-        <button id="navToggle" aria-label="Toggle menu" class="xl:hidden p-2">
-          <span class="iconify text-[30px] text-gray-900" data-icon="mdi:menu"></span>
-        </button>
-      </div>
-    </div>
+  <a href="<?php echo wc_get_cart_url(); ?>" aria-label="Cart">
+    <span class="iconify text-[28px] xl:text-[40px] text-gray-800" data-icon="mdi:cart-outline"></span>
+  </a>
+  <button id="navToggle" aria-label="Toggle menu" class="xl:hidden">
+    <span class="iconify text-[30px] text-gray-900" data-icon="mdi:menu"></span>
+  </button>
+</div>
+</div>
+    
 
    <!-- Mobile Nav -->
-<nav id="mobileNav" class="xl:hidden hidden border-t border-gray-200 bg-white" aria-label="Main menu mobile">>
-  <ul class="flex flex-col gap-2 px-4 sm:px-6 py-4 text-gray-800">
+   <nav id="mobileNav" class="xl:hidden hidden border-t border-gray-200 bg-white" aria-label="Main menu mobile">
+  <ul class="flex flex-col items-center sm:text-gray-800 text-center">
     <li><a href="<?php echo home_url('/'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Home') ); ?></a></li>
+    <li><a href="<?php echo home_url('/shop'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Products') ); ?></a></li>
     <li><a href="<?php echo home_url('/goals'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Goals') ); ?></a></li>
     <li><a href="<?php echo home_url('/blogs'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Blogs') ); ?></a></li>
     <li><a href="<?php echo home_url('/help-us'); ?>" class="block py-2 text-[18px] tracking-[0.05em] font-['Poppins']"><?php echo esc_html( pll__('Help Us') ); ?></a></li>
   </ul>
 </nav>
+
+
 </header>
 
   <script>

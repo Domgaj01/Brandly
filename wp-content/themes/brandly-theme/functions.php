@@ -311,4 +311,9 @@ function tiny_handle_create_review() {
   wp_safe_redirect( add_query_arg('review_status', is_wp_error($ok) ? 'error' : 'success', wp_get_referer() ?: home_url('/') ) );
   exit;
 }
+
+function shop_enable_woocommerce() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'shop_enable_woocommerce' );
   ?>
