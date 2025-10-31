@@ -118,7 +118,7 @@ $image1   = get_field('goals_photo');
 
             <?php if ($title) : ?>
               <h3 id="<?php echo esc_attr($title_id); ?>"
-                  class="font-['Poppins'] font-bold text-[32px] text-[#8075F7] tracking-[0.05em] mb-4" tabindex="0">
+                  class="font-['Poppins'] font-bold text-[32px] text-[#4f44c6] tracking-[0.05em] mb-4" tabindex="0">
                 <?php echo esc_html($title); ?>
               </h3>
             <?php endif; ?>

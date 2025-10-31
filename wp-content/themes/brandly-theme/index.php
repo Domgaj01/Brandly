@@ -203,66 +203,6 @@ $re_branding    = get_field('re-branding');
 $all_in_one     = get_field('all_in_one');
 ?>
 
-<section class="bg-white" role="region" aria-labelledby="bundle-heading">
-  <div class="mx-auto w-full max-w-[1440px] px-4 sm:px-6 py-12 md:py-16">
-    <!-- Heading -->
-    <h2 class="text-center font-['Poppins'] font-bold text-[32px] md:text-[40px] text-black mb-10 md:mb-14" id="bundle-heading" tabindex="0">
-      <?php echo esc_html($bundle_heading); ?>
-    </h2>
-
-    <!-- Phones grid -->
-    <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-start">
-      <li>
-        <a href="#"
-           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="<?php echo pll__('Learn more about Social Media bundle'); ?>">
-          <img src="<?php echo esc_url($social_media['url']); ?>"
-               alt="<?php echo $social_media['alt']; ?>"
-               width="<?php echo (int)$social_media['width']; ?>"
-               height="<?php echo (int)$social_media['height']; ?>"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-contain transition-transform group-hover:scale-[1.02]" />
-        </a>
-      </li>
-      <li>
-        <a href="#"
-           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="<?php echo pll__('Learn more about SEO bundle'); ?>">
-          <img src="<?php echo esc_url($seo['url']); ?>"
-               alt="<?php echo $seo['alt']; ?>"
-               width="<?php echo (int)$seo['width']; ?>"
-               height="<?php echo (int)$seo['height']; ?>"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-contain transition-transform group-hover:scale-[1.02]" />
-        </a>
-      </li>
-      <li>
-        <a href="#"
-           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="<?php echo pll__('Learn more about Rebranding bundle'); ?>">
-          <img src="<?php echo esc_url($re_branding['url']); ?>"
-               alt="<?php echo $re_branding['alt']; ?>"
-               width="<?php echo (int)$re_branding['width']; ?>"
-               height="<?php echo (int)$re_branding['height']; ?>"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-contain transition-transform group-hover:scale-[1.02]" />
-        </a>
-      </li>
-      <li>
-        <a href="#"
-           class="group block relative overflow-hidden bg-[#D9D9D9]/60 transition-all hover:-translate-y-1 hover:shadow-2xl"
-           aria-label="<?php echo pll__('Learn more about All-in-One bundle'); ?>">
-          <img src="<?php echo esc_url($all_in_one['url']); ?>"
-               alt="<?php echo $all_in_one['alt']; ?>"
-               width="<?php echo (int)$all_in_one['width']; ?>"
-               height="<?php echo (int)$all_in_one['height']; ?>"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-contain transition-transform group-hover:scale-[1.02]" />
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
 
 
 <?php

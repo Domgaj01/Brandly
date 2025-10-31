@@ -64,7 +64,7 @@ $formHeading = get_field('form_title');
 <section role="region" aria-labelledby="form-heading" aria-describedby="form-questions form-answers">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
     <h2 id="form-heading"
-        class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#8075F7] text-center mb-8 sm:mb-11"
+        class="font-['Poppins'] text-[28px] sm:text-[36px] md:text-[48px] font-semibold tracking-[0.05em] text-[#4f44c6] text-center mb-8 sm:mb-11"
         aria-label="<?php echo esc_attr( pll__( 'Help Us' ) ); ?>"
         tabindex="0">
       <?php echo esc_html( pll__( 'Help Us' ) ); ?>

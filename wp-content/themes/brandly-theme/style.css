@@ -34,7 +34,7 @@ ul.products li.product .price {
 }
 
 /* === GRID WRAPPER === */
-.woocommerce ul.products {
+.woocommerce-page ul.products {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns for products per row */
   gap: 20px; /* Space between products */
@@ -45,35 +45,18 @@ ul.products li.product .price {
   box-sizing: border-box;
 }
 
-/* === ORDERING SELECTOR === */
-.woocommerce-ordering {
-  display: block; /* Ensure the ordering dropdown is visible */
-  margin-bottom: 20px; /* Add some spacing below the dropdown */
-  text-align: right; /* Align the dropdown to the right */
-}
-
-.woocommerce-ordering select {
-  font-family: 'Poppins', sans-serif; /* Match the global font */
-  font-size: 1rem;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.woocommerce ul.products::before,
-.woocommerce ul.products::after {
+.woocommerce-page ul.products::before,
+.woocommerce-page ul.products::after {
   content: none !important;
   display: none !important;
 }
 /* === EACH PRODUCT === */
-.woocommerce ul.products li.product {
+.woocommerce-page ul.products li.product {
   grid-column: span 1; /* Each product spans 1 column */
 }
 
 /* === PRODUCT LINK === */
-.woocommerce ul.products li.product a.woocommerce-loop-product__link {
+.woocommerce-page ul.products li.product a.woocommerce-loop-product__link {
   display: grid;
   grid-template-rows: auto auto; /* Two rows: one for the image, one for the text */
   grid-template-columns: 1fr; /* Single column layout for image and text */
@@ -84,8 +67,21 @@ ul.products li.product .price {
   width: 100%;
 }
 
+
+.woocommerce ul.products li.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.woocommerce ul.products li.product .button {
+  margin-top: auto;
+  align-self: center;
+}
+
 /* === PRODUCT IMAGE === */
-.woocommerce ul.products li.product a img {
+.woocommerce-page ul.products li.product a img {
   grid-row: 1; /* Place the image in the first row */
   grid-column: 1; /* Place the image in the first column */
   width: 100%;
@@ -94,7 +90,7 @@ ul.products li.product .price {
 }
 
 /* === PRODUCT TEXT === */
-.woocommerce ul.products li.product .product-text {
+.woocommerce-page ul.products li.product .product-text {
   grid-row: 2; /* Place the text in the second row */
   grid-column: 1; /* Place the text in the first column */
   text-align: center; /* Center-align the text */
@@ -121,7 +117,7 @@ ul.products li.product .price {
 }
 
 /* === HOVER EFFECT === */
-.woocommerce ul.products li.product .button:hover {
+.woocommerce-page ul.products li.product .button:hover {
   background-color: #3e36a1; /* Darker shade of the button color on hover */
   color: #fff; /* Keep the text color white */
   transform: scale(1.05); /* Slightly enlarge the button on hover */
@@ -132,13 +128,13 @@ ul.products li.product .price {
   color: #000 !important;
 }
 
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+.woocommerce-page ul.products li.product, .woocommerce-page ul.products li.product {
   margin: 0px !important;
   width: 100% !important;
 }
 
 @media (max-width: 768px) {
-  .woocommerce ul.products {
+  .woocommerce-page ul.products {
     padding: 40px 60px; /* Reduce side padding to 60px on smaller screens */
     margin: 30px auto; /* Adjust top/bottom spacing for smaller screens */
     grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
@@ -146,9 +142,394 @@ ul.products li.product .price {
 }
 
 @media (max-width: 480px) {
-  .woocommerce ul.products {
+  .woocommerce-page ul.products {
     padding: 30px 40px; /* Reduce side padding to 40px on very small screens */
     margin: 20px auto; /* Adjust top/bottom spacing for very small screens */
     grid-template-columns: 1fr; /* Single column layout for very small screens */
+  }
+}
+
+/* === RESET pre single product pages === */
+.single-product .product {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.single-product .product img {
+  width: auto !important;
+  max-width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.single-product .product .price,
+.single-product .product .cart,
+.single-product .product .summary,
+.single-product .product .product_title {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.related.products > h2 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: 0.05em;
+  text-align: left; /* alebo center, ak chceš zarovnať na stred */
+  margin-bottom: 40px;
+}
+
+/* === Zarovnanie ceny a Add to Cart tlačidla na spodok v rámci celej karty === */
+.woocommerce-page ul.products li.product a.woocommerce-loop-product__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* rozdelí obsah vertikálne */
+  height: 100%;
+}
+
+/* Cena a tlačidlo idú automaticky na spodok */
+.woocommerce-page ul.products li.product .price,
+.woocommerce-page ul.products li.product .button {
+  margin-top: auto !important;
+  align-self: center; /* drží ich v strede horizontálne */
+}
+
+
+
+/* (voliteľne) medzera medzi cenou a tlačidlom */
+.woocommerce-page ul.products li.product .button {
+  margin-top: 10px;
+}
+
+/* === REVIEWS sekcia === */
+.woocommerce-Reviews-title {
+  font-size: 20px !important;
+  font-weight: 700 !important; /* bold */
+  margin-bottom: 15px !important; /* medzera pod nadpisom */
+}
+
+.woocommerce-Reviews p {
+  margin-bottom: 15px !important; /* medzera pod textom */
+}
+
+/* Medzera medzi textom a hviezdičkami */
+p.stars {
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Väčší "Submit" button */
+.woocommerce #review_form #submit {
+  padding: 12px 28px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
+
+
+
+
+
+
+/* === Štýl názvu produktu === */
+.single-product .product_title {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px; /* medzera pod názvom */
+}
+
+/* === Cena produktu === */
+.single-product .price {
+  margin-bottom: 20px !important; /* medzera pod cenou */
+}
+
+/* === Popis produktu === */
+.single-product .woocommerce-product-details__short-description {
+  margin-bottom: 30px !important; /* medzera pod popisom */
+}
+
+/* === Tlačidlo Add to Cart === */
+.single-product form.cart .button {
+  width: 260px !important; /* dlhšie tlačidlo */
+  height: 56px !important; /* zachová peknú proporciu */
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-product form.cart + form.cart {
+  display: none !important;
+}
+
+.single-product form.cart .quantity {
+  display: none !important;
+}
+
+/* === Breadcrumb (path) spacing === */
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) .woocommerce-breadcrumb {
+  padding-left: 40px; /* medzera od ľavého okraja */
+}
+
+/* === Celá product page o kúsok nižšie pod navbar === */
+.single-product .site-main {
+  padding-top: 40px; /* priestor nad produktovým obsahom */
+}
+
+@media (max-width: 1024px) {
+  .single-product .product {
+    padding: 0 30px; /* pridaná medzera od okrajov */
+  }
+
+  .single-product .product_title {
+    font-size: 26px !important;
+  }
+
+  .related.products > h2 {
+    font-size: 26px !important;
+    text-align: center;
+  }
+}
+
+/* Mobilné zariadenia (max-width: 640px) */
+@media (max-width: 640px) {
+  .single-product .product {
+    padding: 0 20px; /* ešte väčšia medzera pre malé obrazovky */
+  }
+
+  .single-product .product_title {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .single-product .price {
+    text-align: center;
+  }
+
+  .single-product form.cart .button {
+    width: 100% !important; /* tlačidlo cez celú šírku */
+    max-width: 320px;
+  }
+
+  .related.products > h2 {
+    text-align: center;
+    font-size: 22px !important;
+  }
+}
+
+.woocommerce-cart {
+  padding: 5vw; /* približne 80px na väčších obrazovkách, škáluje sa */
+  box-sizing: border-box;
+}
+
+
+/* === Zarovnanie Cart totals do stredu === */
+.woocommerce-cart .cart-collaterals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  text-align: center;
+  
+}
+
+/* Zarovnanie tabuľky a tlačidla */
+.woocommerce-cart .cart_totals {
+  width: auto;
+  margin: 0 auto;
+}
+
+/* Zarovnanie tlačidla Proceed to checkout */
+.woocommerce-cart .wc-proceed-to-checkout {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+  width: auto;
+  min-width: 350px; /* trošku širší pre lepší vzhľad */
+  text-align: center;
+}
+
+/* Nadpis "Cart totals" */
+.woocommerce-cart .cart_totals h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px; /* medzera pod nadpisom */
+  text-align: center;
+}
+
+
+/* === Celá checkout stránka – padding a responzivita === */
+.woocommerce-checkout {
+  padding: 80px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .woocommerce-checkout {
+    padding: 40px 20px;
+  }
+}
+
+/* === Nadpisy Billing details, Your order === */
+.woocommerce-billing-fields > h3,
+.woocommerce-checkout-review-order h3,
+.woocommerce-additional-fields > h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* === Formulár – jednotný štýl inputov === */
+.woocommerce-checkout input.input-text,
+.woocommerce-checkout select,
+.woocommerce-checkout textarea {
+  border: 1px solid #60419f;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === Place Order tlačidlo – centrované, bez zaoblenia === */
+#place_order {
+  display: block;
+  background-color: #7552b5;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  border-radius: 0; /* odstráni zaoblenie */
+  padding: 18px 60px;
+  margin: 40px auto 0 auto; /* centrovanie tlačidla */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+#place_order:hover {
+  background-color: #5f3f9f;
+  transform: translateY(-2px);
+}
+
+
+/* === Zarovnanie textov a sekcií === */
+.woocommerce-checkout-review-order,
+.woocommerce-billing-fields,
+.woocommerce-additional-fields {
+  text-align: left;
+}
+
+/* === Celkový layout My Account === */
+.woocommerce-account {
+  padding: 80px 80px 80px 80px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .woocommerce-account {
+    padding: 40px 20px;
+  }
+}
+
+/* === Navigácia na ľavej strane === */
+.woocommerce-MyAccount-navigation {
+  width: 25%;
+  float: left;
+}
+
+.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.woocommerce-MyAccount-navigation li {
+  margin-bottom: 15px;
+}
+
+.woocommerce-MyAccount-navigation a {
+  display: block;
+  padding: 12px 20px;
+  background-color: #f2eef8;
+  color: #000;
+  font-weight: 600;
+  border-radius: 0; /* ostré rohy */
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.woocommerce-MyAccount-navigation a:hover,
+.woocommerce-MyAccount-navigation .is-active a {
+  background-color: #4F44C6;
+  color: #fff;
+  border-radius: 0; /* istota, že nič sa nezaoblí */
+}
+
+/* === Obsah vpravo === */
+.woocommerce-MyAccount-content {
+  width: 70%;
+  float: right;
+  background: #f8f6fb;
+  padding: 40px;
+  border-radius: 0; /* ostré rohy */
+  box-sizing: border-box;
+}
+
+/* === Nadpisy === */
+.woocommerce-account h1,
+.woocommerce-account h2,
+.woocommerce-account h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* === Tlačidlá v account sekcii === */
+.woocommerce-Button,
+.button,
+input[type="submit"],
+button[type="submit"] {
+  display: inline-block;
+  background-color: #4F44C6;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 0; /* ostré rohy */
+  padding: 14px 40px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.woocommerce-Button:hover,
+.button:hover,
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* === Mobilné zobrazenie === */
+@media (max-width: 768px) {
+  .woocommerce-MyAccount-navigation,
+  .woocommerce-MyAccount-content {
+    width: 100%;
+    float: none;
+  }
+
+  .woocommerce-MyAccount-content {
+    margin-top: 30px;
+    padding: 30px 20px;
   }
 }
