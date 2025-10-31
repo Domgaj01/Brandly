@@ -316,4 +316,20 @@ function shop_enable_woocommerce() {
     add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'shop_enable_woocommerce' );
+
+
+// Customize WooCommerce single product page layout
+add_action('woocommerce_before_main_content', 'custom_woocommerce_product_page', 10);
+
+function custom_woocommerce_product_page() {
+    // Remove default WooCommerce hooks
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+
+    // Add custom hooks
+    add_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+    add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    add_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 20);
+}
   ?>

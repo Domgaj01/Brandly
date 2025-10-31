@@ -25,4 +25,130 @@ html {
   scrollbar-gutter: stable; /* drží miesto pre scrollbar stále */
 }
 
+/* === GLOBAL FONT === */
+body,
+ul.products li.product,
+ul.products li.product .price {
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: 0.05em;
+}
 
+/* === GRID WRAPPER === */
+.woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for products per row */
+  gap: 20px; /* Space between products */
+  margin: 40px auto; /* Add 40px spacing to the top and bottom, center the grid horizontally */
+  padding: 40px 80px; /* Add 40px space on top/bottom and 80px on the sides */
+  list-style: none;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* === ORDERING SELECTOR === */
+.woocommerce-ordering {
+  display: block; /* Ensure the ordering dropdown is visible */
+  margin-bottom: 20px; /* Add some spacing below the dropdown */
+  text-align: right; /* Align the dropdown to the right */
+}
+
+.woocommerce-ordering select {
+  font-family: 'Poppins', sans-serif; /* Match the global font */
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.woocommerce ul.products::before,
+.woocommerce ul.products::after {
+  content: none !important;
+  display: none !important;
+}
+/* === EACH PRODUCT === */
+.woocommerce ul.products li.product {
+  grid-column: span 1; /* Each product spans 1 column */
+}
+
+/* === PRODUCT LINK === */
+.woocommerce ul.products li.product a.woocommerce-loop-product__link {
+  display: grid;
+  grid-template-rows: auto auto; /* Two rows: one for the image, one for the text */
+  grid-template-columns: 1fr; /* Single column layout for image and text */
+  align-items: center;
+  gap: 10px;
+  text-align: center; /* Center-align text */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* === PRODUCT IMAGE === */
+.woocommerce ul.products li.product a img {
+  grid-row: 1; /* Place the image in the first row */
+  grid-column: 1; /* Place the image in the first column */
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensure the image fits fully within the box */
+}
+
+/* === PRODUCT TEXT === */
+.woocommerce ul.products li.product .product-text {
+  grid-row: 2; /* Place the text in the second row */
+  grid-column: 1; /* Place the text in the first column */
+  text-align: center; /* Center-align the text */
+  font-size: 1rem;
+  color: #333; /* Adjust text color if needed */
+}
+
+/* === STYLE BUY BUTTON === */
+.woocommerce ul.products li.product .button {
+  display: block; /* Ensure the button behaves like a block element */
+  margin: 10px auto; /* Center the button horizontally and add spacing */
+  text-align: center; /* Center the text inside the button */
+  padding: 10px 15px; /* Reduce horizontal padding to make the button narrower */
+  font-size: 1rem; /* Match the size of the text */
+  font-weight: bold; /* Make the text bold */
+  color: #fff; /* Button text color */
+  background-color: #4F44C6; /* Button background color */
+  border: none; /* Remove default border */
+  border-radius: 0; /* Keep edges sharp */
+  cursor: pointer; /* Add pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  width: auto; /* Ensure the width adjusts based on content */
+  max-width: 200px; /* Optional: Set a maximum width for the button */
+}
+
+/* === HOVER EFFECT === */
+.woocommerce ul.products li.product .button:hover {
+  background-color: #3e36a1; /* Darker shade of the button color on hover */
+  color: #fff; /* Keep the text color white */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+.woocommerce-Price-amount {
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: 0.05em;
+  color: #000 !important;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  margin: 0px !important;
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .woocommerce ul.products {
+    padding: 40px 60px; /* Reduce side padding to 60px on smaller screens */
+    margin: 30px auto; /* Adjust top/bottom spacing for smaller screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .woocommerce ul.products {
+    padding: 30px 40px; /* Reduce side padding to 40px on very small screens */
+    margin: 20px auto; /* Adjust top/bottom spacing for very small screens */
+    grid-template-columns: 1fr; /* Single column layout for very small screens */
+  }
+}
